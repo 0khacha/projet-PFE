@@ -1,0 +1,34 @@
+/* Styling for Ordered List */
+
+ol {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol li {
+  counter-increment: custom-counter;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+ol li::before {
+  content: counter(custom-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: black; /* Custom color for the counter */
+  margin-right: 10px;
+}
+.dark-mode ol li::before{
+  color: #f8f8f8;
+}
+.dark-mode ol li {
+  color: #f8f8f8;
+}
+/* Add more styles as needed */

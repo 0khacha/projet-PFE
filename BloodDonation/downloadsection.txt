@@ -1,0 +1,90 @@
+</div>
+<br>
+<div class="tisnat"> 
+</div>
+<h2>Your Generosity, Our Strength</h2>
+<h2>Empowering Lives with Every Donation</h2>
+
+<div class="txt1">
+  
+  <big>"Every drop of blood is a gift of life. Your donation can bring hope, healing, and a second chance to someone in need. Donate blood and be a hero today!"</big>
+
+   <p class="txt"></p>
+   <br>
+<a href="http://www.google.com/" target="_blank">  
+<button class="dow">Download <br> iOS </button></a> 
+<a href="http://www.google.com/" target="_blank"><button class="dow">Download Android</button></a>
+
+</div>
+<br>
+
+csss: 
+.txt1{
+  text-align: center;
+  font-style: italic;
+  size: 20%;
+}
+
+.tisnat{
+  
+  border: none;
+  cursor: pointer;
+ 
+  width: 100%;
+  height: 600px;
+  background-repeat: no-repeat;
+  animation: change 10s infinite;
+  background-position: center;
+ 
+
+  
+  
+  
+
+}
+
+
+button.dow{
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 150px;
+  height: 60px;
+  font-size: large;
+  background-color: black;
+  text-align: center;
+  border: none;
+  position: relative;
+   
+}
+.dow:hover{
+  color: gray;
+}
+.txt{
+  position: relative;
+  font-style: italic;
+  font-size: larger;
+  font-size: 100%;
+}
+@keyframes change{
+ 
+
+  80%
+  {
+    background-image: url(pexels-mnz-1598505.png);
+  }
+
+  20%
+  {
+    background-image: url(pexels-madvortex-9214280.png);
+  }
+60%
+{
+  background-image: url(51a7d341-b6e6-431c-8883-ce11ccdca760.png);
+}
+0%
+{
+  background-image: url(58e3c7f6-168c-4ccf-8d1a-142de8bdb122.png);
+}
+
+}

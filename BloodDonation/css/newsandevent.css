@@ -1,0 +1,200 @@
+@import "style.css";
+@import "dark-mode.css";
+.news-events-section {
+  background-color: #f9f9f9;
+  padding: 40px 0;
+}
+
+.news-section h2 ,.news-section p
+{
+  text-align: center;
+}
+.news-image {
+  width: 100%;
+  border-radius: 5px;
+  height: 200px;
+}
+
+.upcoming-events-section,
+.news-section {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+.event-cards,
+.news-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.event-card,
+.news-card {
+  width: 30%;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover,
+.news-card:hover {
+  transform: scale(1.05);
+}
+
+.event-card img,
+.news-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.event-card h3,
+.news-card h3 {
+  color: #333;
+}
+
+.event-card p,
+.news-card p {
+  color: #555;
+  line-height: 1.4;
+}
+.news-card h5{
+  color: #555;
+  font-size: smaller;
+}
+.explore-link
+{
+  color: black;
+}
+.dark-mode .explore-link
+{
+  color: white;
+}
+.read-more-link {
+  color: #d9534f;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: #5bc0de;
+}
+/* Existing styles... */
+
+/* Dark Mode */
+.dark-mode .news-events-section,
+.dark-mode .upcoming-events-section,
+.dark-mode .news-section {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .event-card,
+.dark-mode .news-card {
+  background-color: #333;
+  border: 1px solid black;
+}
+
+.dark-mode .event-card h3,
+.dark-mode .news-card h3,
+.dark-mode .event-card p,
+.dark-mode .news-card p {
+  color: #fff;
+}
+
+.dark-mode .read-more-link {
+  color: #d9534f;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .read-more-link:hover {
+  color: #5bc0de;
+}
+/* Existing styles above this line */
+
+/* Styling for the stay in touch section */
+.stay-in-touch-container {
+  background-color: #f7f7f7;
+  padding: 40px 0;
+  
+}
+
+.stay-in-touch {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+
+}
+
+
+.stay-in-touch h2 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.stay-in-touch p {
+  color: #666;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.stay-in-touch ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.stay-in-touch ul li {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+}
+
+.stay-in-touch ul li::before {
+  content: '\2022'; /* Bullet point */
+  color: #d9534f;
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+/* Styling for the subscribe form */
+.subscribe-form {
+  margin-top: 20px;
+}
+
+.subscribe-form button {
+  text-decoration: none;
+  color: #080808;
+  background-color: #d1b5b5;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: #5bc0de;
+  font-style: oblique;
+}
+
+/* Dark mode styles */
+.dark-mode .stay-in-touch-container {
+  background-color: #343a40;
+}
+
+.dark-mode .stay-in-touch h2,
+.dark-mode .stay-in-touch p,
+.dark-mode .stay-in-touch ul li {
+  color: #fff;
+}
+
+.dark-mode .subscribe-form button {
+  background-color: #0275d8;
+}
+
+/* Add more dark mode styles as needed */
