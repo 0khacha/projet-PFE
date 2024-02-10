@@ -1,0 +1,80 @@
+@import "style.css";
+@import "dark-mode.css";
+/* Header styles */
+#header-placeholder {
+    height: 60px; /* Adjust the height as needed */
+}
+
+/* Donate Section styles */
+.page-container {
+    margin-top: 40px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.donate-section {
+    text-align: center;
+}
+
+.donate-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    margin-top: 10px;
+  
+}
+
+input,
+select,
+textarea {
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Animation for form elements */
+input,
+select,
+textarea {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+
+.half-width {
+  width: 48%; /* Adjust as needed */
+}
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.form-row label {
+  flex: 0 0 100%;
+  margin-bottom: 8px;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  flex: 0 0 calc(50% - 8px);
+  margin-bottom: 8px;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
