@@ -1,12 +1,12 @@
 @import "style.css";
-@import "dark-mode.css";
+@import "howtohelp.css";
 /* Header styles */
 #header-placeholder {
-    height: 60px; /* Adjust the height as needed */
+margin-bottom: 40px;
 }
 
 /* Donate Section styles */
-.page-container {
+.page-containerr {
     margin-top: 40px;
     max-width: 800px;
     margin: 20px auto;
@@ -16,9 +16,15 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     
 }
+.dark-mode .page-containerr
+{
+    background-color: #555;
+    
+}
 
 .donate-section {
     text-align: center;
+    margin-top: 40px;
 }
 
 .donate-form {
