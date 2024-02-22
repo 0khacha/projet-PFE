@@ -1,0 +1,46 @@
+@import "style.css";
+
+.blood-request-section2 {
+
+  padding: 40px 0;
+}
+.dark-mode h2{
+  color: white;
+}
+h2{
+  color: var(#ED4557);
+}
+
+.content-container2 {
+  max-width: 600px;
+  margin: 0 auto;
+ 
+}
+
+.text-content2 {
+  width: 100%;
+}
+
+
+p {
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  gap: 15px;
+}
+
+
+.dark-mode label
+{
+  color: white;
+}
+
+input, select {
+  
+  width: 600px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

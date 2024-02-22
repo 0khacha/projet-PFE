@@ -1,0 +1,152 @@
+@import "header-style.css";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: pink ;
+}
+
+
+.login-page {
+  color: white;
+ 
+}
+
+.login-container {
+  margin: 300px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+
+}
+.login-image {
+  width: 45%; /* Adjust the width as needed */
+  align-items: end;
+  height: 100%;
+}
+
+.login-image img {
+  width: 100%;
+  padding-bottom: 0;
+}
+.login-form {
+  margin-bottom: 20px;
+  border-right: 1px solid #ccc; /* Add a border on the right side */
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: auto;
+}
+
+.form__field {
+  font-family: inherit;
+  border: 0;
+  border-bottom: 1px solid #9b9b9b;
+  outline: 0;
+  font-size: 1rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: red;
+  font-weight: 700;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+button {
+  margin-top: 20px;
+  width: 300px;
+  padding: 10px;
+  background-color: rgb(220, 124, 124);
+  transition-property: background-color,border-color,color,box-shadow,filter;
+                    transition-duration: .3s;
+                    border: 1px solid transparent;
+  color: black;
+
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 200ms ease-in 0s;
+}
+button:hover {
+  background-color: rgb(95, 71, 71);
+  transform: scale(1.04);
+  color: #fff;
+}
+
+.signup-link {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

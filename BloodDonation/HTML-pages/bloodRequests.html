@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bloodRequests.css" type="text/css" class="light-mode">
+    <link rel="icon" href="image/logo2.png">
+    <title>Request Blood - Donate. Just Do It MA</title>
+</head>
+
+<body id="body">
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <a href="findbloodcentre.html">Find a Donation Center</a> |
+        <a href="howtohelp.html">How to Help</a> |
+        <a href="https://www.instagram.com/0khacha/">Join the Cause</a> |
+        <a href="logout.php">Log out</a> |
+        <button class="language-btn">Language</button>
+        <!-- Language Dropdown -->
+        <nav class="language-dropdown">
+            <a href="?lang=en">English</a>
+            <a href="?lang=ar">عربي</a>
+            <a href="?lang=fr">Français</a>
+        </nav>
+    </nav>
+    <div id="header-placeholder"></div>
+    <script src="js/header.js"></script>
+
+    <!-- Blood Request Section -->
+    <div class="blood-request-section">
+        <div class="content-container">
+            <div class="text-content">
+                <h2>Request Blood - Help Us Save Lives!</h2>
+                <p>If you or someone you know is in need of blood, please fill out the form below. We will do our best to connect you with potential donors.</p>
+
+                <!-- Blood Request Form -->
+                <form id="bloodRequestForm" action="submit_request.php" method="post">
+                    <label for="patientName">Patient's Name: *</label>
+                    <input type="text" id="patientName" name="patientName" required>
+
+                    <label for="bloodType">Blood Type: *</label>
+                    <select id="bloodType" name="bloodType" required>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+
+                    <label for="urgency">Urgency: *</label>
+                    <select id="urgency" name="urgency" required>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+
+                    <label for="patientName">City: *</label>
+                    <input type="text" id="CityName" name="CitytName" required>
+
+                    <label for="hospital">Hospital Name:</label>
+                    <input type="text" id="hospital" name="hospital" >
+
+                    <label for="contact">Contact Information: *</label>
+                    <input type="text" id="contact" name="contact" placeholder="Email/Phone" required>
+
+                    <button type="submit">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+    <script src="js/dark-mode.js"></script>
+</body>
+</html>

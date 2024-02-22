@@ -1,32 +1,47 @@
 /* Import external stylesheets */
 @import "footer-style.css";
-@import "header-style.css";
 @import "dark-mode.css";
 @import "howtohelp.css";
 @import "howtodonate.css";
 @import "contactus.css";
-@import "findablooddrive.css";
 @import "newsandevent.css";
-
+@import "find_blood.css";
 
 /* Body styles */
+:root {
+  --body-background-color: #f8f8f8;
+   --red : #ED4557;
+    --gray : #333;
+    --gray2 : #555;
+  --body-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-  background-color: #f8f8f8;
+  background-color: var(--body-background-color);
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--body-font-family);
+}
+
+.blood-donation-section {
+  padding: 0;
+  background: url('../image/canvaV2.svg') no-repeat center;
+  background-size: 80px;
+  background-size: cover;
+  margin-bottom: 10px;
 }
 
 /* Text content styles */
 .text-content {
   width: 45%;
-  color: #333;
+  color:var(--gray);
   padding-right: 50px;
 }
 
 .text-content h1 {
   font-size: 2.5em;
   margin-bottom: 15px;
-  color: #555;
+  color: var(--red);
+  text-align: justify;
 }
 
 .text-content p {
@@ -34,183 +49,213 @@ body {
   margin-bottom: 30px;
   line-height: 1.6;
   text-align: justify;
-  color: #555;
+  color:var(--gray2);
 }
 
 .cta-container {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* Donate link styles */
 .donate-link {
-  text-decoration: none;
-  color: #080808;
-  background-color: #d1b5b5;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  transition: background-color 0.3s ease;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--red);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 100px;
+
 }
 
 .donate-link:hover {
   background-color: #f1f1f1;
+  transform: scale(1.04);
   font-style: oblique;
+  color: black;
 }
 
-/* Image wrapper styles */
-.image-wrapper {
-  width: 45%;
-  overflow: hidden;
-  justify-content: flex-end;
+.blood-request-section {
+  padding: 40px 0;
+  text-align: justify;
+  color: var(--body-background-color);
 }
 
-.donation-image {
-  width: 100%;
-  height: auto;
-  margin-left: 50px;
-}
-
-/* Donation conditions section styles */
-.donation-conditions-section {
-  margin-top: 20px;
-}
-
-/* Section header styles */
-.section-header {
-  text-align: center;
-}
-
-.section-header h2 {
-  margin-bottom: 10px;
+.request-content-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
-}
-
-.section-header h2 img {
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
-  background-color: #f8f8f8;
-  border-radius: 50%;
-  padding: 5px;
-  color: #555;
-}
-
-/* Condition list styles */
-.condition-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-/* Condition box styles */
-.condition-box {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 300px;
-  transition: opacity 0.3s ease;
-}
-
-.condition-box:hover {
-  opacity: 0.8;
-  background-color: #f3f0f0;
-  transition: background-color 0.3s ease;
-}
-
-/* Icon box styles */
-.icon-box {
-  background-color: #f8f8f8;
-  border-radius: 50%;
-  padding: 15px;
-  margin-bottom: 15px;
-  width: 30px;
-  height: 30px;
-}
-
-.icon-box img {
-  width: 35px;
-  height: 35px;
-}
-
-/* Condition info styles */
-.condition-info {
-  text-align: center;
-}
-
-.condition-info h3 {
-  margin: 0;
-  color: #555;
-}
-
-.condition-info p {
-  margin: 0;
-}
-
-/* Paragraph styles */
-.donation-conditions-section p {
-  font-size: 16px;
-  color: #555555;
-  text-align: center;
-}
-
-/* Leave a Comment link styles */
-.donation-conditions-section p a {
-  color: rgb(158, 68, 68);
-  text-decoration: none;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-}
-
-.donation-conditions-section p a:hover {
-  text-decoration: underline;
-}
-
-/* Container navigation styles */
-.condition-navigation {
-  display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+}
+
+.request-text-content {
+  width: 30%;
+  background-color: var(--red);
+  padding: 40px;
+  border-radius: 8px;
+  margin-right: 100px;
+  height: auto;
+}
+
+.request-image {
+  width: 35%;
+  margin-left: 60px;
+}
+
+.request-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Why Donate Blood Section */
+.why-donate-section {
+  padding: 40px 0;
+}
+
+#whyimage {
+  max-width: 25%;
+  height: auto;
+  display: block;
+  margin-top: 0;
+  margin: auto;
+  margin-top: -220px;
+  margin-bottom: -80px;
+}
+
+.why-content-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.reason-box {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--red);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
+  margin-right: 20px;
+  height: 250px;
+  width: 150px;
+}
+
+.reason-box:hover {
+  transform: scale(1.05);
+}
+
+.icon-box2 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.icon-box2 img {
+  width: 50px;
+}
+
+.reason-info p {
+  margin-top: 30px;
+  color: var(--body-background-color);
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Image and Statistics Section */
+.image-and-statistics-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.image-container {
+  flex: 1;
+  max-width: 40%;
+  padding-bottom: 100px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Statistics Section */
+.statistics-section {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.statistics-title {
+  margin-right: 90px;
+  color: var(--red);
+  font-size: 2em;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.statistics-container {
+  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  max-width: 600px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.statistic-box {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  max-width: 200px;
   padding: 20px;
 }
 
-/* Handle styles */
-.handle {
-  cursor: pointer;
-  outline: none;
-  position: relative;
+.statistic-box:hover {
+  transform: scale(1.05);
 }
 
-/* Indicator icon styles */
-.indicator-icon {
-  width: 20px;
-  height: 20px;
-  transition: color 0.3s, transform 0.3s;
+.icon-box3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-/* Previous button styles */
-.handlePrevious {
+.icon-box3 img {
+  max-width: 50px;
+  max-height: 50px;
   margin-right: 10px;
 }
 
-/* Next button styles */
-.handleNext {
-  margin-left: 10px;
+.statistic-number {
+  color: var(--gray2);
+  font-size: 1.5em;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
-/* Change color and move on hover */
-.handle:hover .indicator-icon {
-  transform: translateX(5px);
+.statistic-description {
+  color: var(--gray);
+  font-size: 1em;
+  margin-top: 5px;
 }
+
+.dark-mode .statistic-number,
+.dark-mode .statistic-description {
+  color: var(--body-background-color);
+}
+
+/* New styles for tooltip */

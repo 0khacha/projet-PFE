@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/header-style.css">
+  <?php
+  include 'UserController.php';
+
+  UserController::handleButtonClick();  // Handle user button click actions
+  ?>
+  
+</head>
+<body>
+  <div class="header-container">
+    <a href="index.html">
+      <nav class="logo-container">
+          <img class="logo" src="image/logo.png" alt="Blood Donation Logo">
+      </nav>
+    </a>
+    <div class="buttons-container">
+      <div class="header-dropdown">
+        <button class="header-btn">Donate Blood</button>
+        <div class="dropdown-content">
+          <a href="howtodonate.html">How to donate </a>
+          <a href="donate.html?action=donate">Donate</a>
+          <a href="bloodRequests.html">Else</a>
+        </div>
+      </div>
+      <div class="header-dropdown">
+        <button type="submit" name="headerBtn" value="requestBlood" class="header-btn">Request Blood</button>
+      <div class="dropdown-content">
+        <a href="howtodonate.html">How to donate </a>
+        <a href="donate.html">Donate</a>
+        <a href="bloodRequests.html">Else</a>
+      </div>
+    </div>
+      <div class="header-dropdown">
+        <button class="header-btn"> Donation Center</button>
+        <div class="dropdown-content">
+          <a href="findbloodcentre.php">Find a Blood Center</a>
+          <a href="findablooddrive.html">Find a Blood Drive</a>
+          <a href="contactus.html">Our Center</a>
+        </div>
+      </div>
+      <div class="header-dropdown">
+        <button class="header-btn">Learn</button>
+        <div class="dropdown-content">
+          <a href="#">Volunteer</a>
+          <a href="#">Organize an Event</a>
+        </div>
+      </div>
+      <div class="header-dropdown">
+        <button class="header-btn">About Us</button>
+        <div class="dropdown-content">
+          <a href="#">Our Mission</a>
+          <a href="#">Team</a>
+          <a href="#">Impact</a>
+        </div>
+      </div>
+      <div class="header-dropdown">
+        <button class="header-btn">Get Involved</button>
+        <div class="dropdown-content">
+          <a href="#">Volunteer</a>
+          <a href="#">Organize an Event</a>
+        </div>
+      </div>
+    </div>
+    <div class="dark-modee" onclick="toggleDarkMode();">
+      <img class="darkmodeimage" src="icons/darkmode.png" alt="Dark Mode">
+    </div>
+  </div>
+</body>
+</html>
+  

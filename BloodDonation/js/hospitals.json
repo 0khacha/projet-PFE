@@ -1,0 +1,20 @@
+[
+  { "name": "المستشفى العسكري گلميم", "lat": 29.00337539486048, "lng": -10.046788261997143 },
+  { "name": "Centre Hospitalier Régional Guelmim", "lat": 28.97386653104014, "lng": -10.048022890396117 },
+  { "name": "Nouveau Hôpital de Guelmim", "lat": 29.003777216552265, "lng": -10.072778782954629 },
+  { "name": "Centre Régional de Transfusion Sanguine - Agadir", "lat": 30.550394311692518, "lng": -9.333780361066601 },
+  { "name": "Projet centre de dhémodialyse", "lat": 31.6497611775773, "lng": -7.907347146508206 },
+  { "name": "Centre régional de transfusion sanguine Marrakech", "lat": 31.710267756008864, "lng": -7.994090417170356 },
+  { "name": "Unité de don du sang مركز التبرع بالدم", "lat": 33.34916473312339, "lng": -7.499442131193936 },
+  { "name": "BLOOD CENTER", "lat": 33.58208978068688, "lng": -7.6723956381789735 },
+  { "name": "مركز تحاقن الدم", "lat": 33.576327335097545, "lng": -7.582478682238401 },
+  { "name": "Centre régional de transfusion sanguine de Casablanca", "lat": 33.588680274736994, "lng": -7.589528654288033 },
+  { "name": "مركز التبرع بالدم", "lat": 33.602280100526656, "lng": -7.618471990155656 },
+  { "name": "المركز الجهوي لتحاقن الدم الرباط", "lat": 34.01097712493536, "lng": -6.783847210085025 },
+  { "name": "دار التبرع بالدم الرباط - centre national de transfusion sanguine rabat", "lat": 34.02346938137298, "lng": -6.786930883549553 },
+  { "name": "Centre De Transfusion Sanguine", "lat": 33.93710238308867, "lng": -5.446504012907152 },
+  { "name": "Regional Blood Transfusion Center", "lat": 34.05933613299318, "lng": -4.8687208192160165 },
+  { "name": "Regionale blood transfusion centre", "lat": 32.08797652850822, "lng": -4.294255893166267 },
+  { "name": "مستشفى الضاحية لقصابي-تسكنان", "lat": 28.99926110850908, "lng": -10.172000431213382 },
+  { "name": "Regional Center Transfusion Sanguine Ouarzazate", "lat": 30.925582032263595, "lng": -6.916548545745445 }
+]

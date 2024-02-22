@@ -1,69 +1,76 @@
-@import "dark-mode.css";
-@import "light-mode.css";
 .top-nav {
   text-align: right;
   font-size: medium;
-  height: 30px;
-}
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 
-.top-nav a,
-.language-btn,
-.language-dropdown a {
-  cursor: pointer;
-  text-decoration: none;
-  color: #555;
-  margin-left: 5px;
-  margin-right: 5px;
-  font-family: inherit; /* Inherits the font from the parent (.top-nav) */
 }
-
-.top-nav a:hover {
-  text-decoration: underline;
-  color: #333;
-}
-
-/* Styles for the language button */
-.language-btn {
-  background-color: #ffffff;
+.animated-button {
+  background: none;
   border: none;
-  font-size: medium;
-  margin-left: 5px;
-
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s ease;
+  display: flex;
+  margin: 20px;
 }
-/* Styles for the language dropdown */
-.language-dropdown {
+
+.animated-button img ,.language-btn img 
+,.account-btn img {
+  width: 30px; /* Adjust the size as needed */
+  height: 30px;
+  transition: transform 0.3s ease; /* Smooth transition for the transform property */
+}
+.account-btn:hover img {
+  width: 30px; /* Adjust the size as needed */
+  height: 30px;
+  transition: transform 0.3s ease; /* Smooth transition for the transform property */
+}
+
+.animated-button:hover img,.language-btn:hover img,.acccount-btn:hover img {
+  transform: rotate(360deg); /* Rotate the icon on hover */
+}
+.language-btn, .account-btn {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+.language-dropdown, .account-dropdown {
+  align-items: center;
   display: none;
   position: absolute;
-  justify-content: center;
-  right: 0;
-  background-color: #f9f9f9;
   min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  transform: translateX(-50%);
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   z-index: 1;
-  text-decoration: none;
-  border-radius: 5px;
 }
 
-.language-dropdown a {
+.language-btn:hover .language-dropdown ,.account-btn:hover .account-dropdown{
   display: block;
-  padding: 10px;
+}
+.dark-mode .account-dropdown ,.dark-mode .account-dropdown a:hover
+{
+  background-color: black;
+  color: white;
+}
+.language-dropdown a,.account-dropdown a {
+  align-items: center;
+  display: block;
   text-decoration: none;
   color: #555;
-  
-  
+  padding: 10px;
 }
-
-.language-dropdown a:hover {
+.language-dropdown a:hover, .account-dropdown a:hover {
   background-color: #ddd;
   color: #333;
   margin: 0;
   
-}
-
-/* Show the dropdown on hover */
-.language-btn:hover + .language-dropdown,
-.language-dropdown:hover {
-  display: block;
 }
 .header-btn 
 {
@@ -92,7 +99,8 @@
 }
 
 .logo {
-  height: 40px;
+  height: 60px;
+  
 }
 
 .buttons-container {
@@ -107,7 +115,7 @@
   margin: 10px;
 }
 
-.header-btn {
+.header-btn , .header-dropdown.header-btn {
   background-color: #f3f0f0;
   border: none;
   color: #1b1919;
@@ -117,6 +125,7 @@
   border: none;
   transition: color 0.3s ease;
 }
+
 .about-btn {
  
   color: #fff;
