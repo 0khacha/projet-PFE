@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+<?php
+    include 'controllers/UserController.php';
+    UserController::checkLoggedIn();
+     // Check if the user is logged in
+    UserController::handleButtonClick();  // Handle user button click actions
+    ?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

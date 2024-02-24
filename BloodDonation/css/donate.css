@@ -1,86 +1,73 @@
+/* Add this style to your find_blood.css file or your existing CSS file */
 @import "style.css";
-@import "howtohelp.css";
-/* Header styles */
-#header-placeholder {
-margin-bottom: 40px;
-}
+/* General Styles */
 
-/* Donate Section styles */
-.page-containerr {
-    margin-top: 40px;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+/* Map Section Styles */
+.map-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
-.dark-mode .page-containerr
+h2{
+    color: #ED4557;
+}
+p
 {
-    background-color: #555;
-    
+    padding: 20px;
+    text-align: justify;
 }
-
-.donate-section {
-    text-align: center;
-    margin-top: 40px;
+/* Appointments Section Styles */
+.Appoinments-section {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100vh;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 20px;
+    height: 100vh; /* Set a specific height for the appointments box */
 }
 
 .donate-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 label {
-    margin-top: 10px;
-  
+    display: block;
+    margin-bottom: 10px;
 }
 
 input,
 select,
 textarea {
-    margin-bottom: 16px;
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-/* Animation for form elements */
-input,
-select,
-textarea {
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeInUp 0.8s forwards;
+/* Add this style to your find_blood.css file or your existing CSS file */
+
+/* Styles for the radio button group in one line */
+/* Map Styles */
+#map {
+    flex: 1;
+    height: 100vh; /* Set a specific height for the appointments box */
+    border: 1px solid #ddd; /* Optional border for map */
+    border-radius: 5px;
+    padding: 5px;
 }
 
+/* Footer Styles */
+/* (Assuming you have a footer section) */
 
-.half-width {
-  width: 48%; /* Adjust as needed */
-}
-.form-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-}
+/* Dark Mode Styles */
+/* (Assuming you have a dark mode functionality) */
 
-.form-row label {
-  flex: 0 0 100%;
-  margin-bottom: 8px;
-}
-
-.form-row input,
-.form-row select,
-.form-row textarea {
-  flex: 0 0 calc(50% - 8px);
-  margin-bottom: 8px;
-}
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* Add any other styles as needed */

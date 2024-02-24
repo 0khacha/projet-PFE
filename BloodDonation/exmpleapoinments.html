@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Blood Donation Appointment</title>
+</head>
+<body>
+   
+<div class="container">
+  <h1>Blood Donation Appointment</h1>
+
+  <div id="eligibilityCheck">
+      <h2>Quick Eligibility Check</h2>
+      <p>Answer the following questions before proceeding:</p>
+      <form id="eligibilityForm">
+        <div class="question" id="question1">
+            <label>Are you 18 years or older?</label>
+            <input type="radio" name="question1" value="yes" required> Yes
+            <input type="radio" name="question1" value="no"> No
+        </div>
+
+        <div class="question" id="question2" style="display: none;">
+            <label>Do you currently have any major health issues?</label>
+            <input type="radio" name="question2" value="yes" required> Yes
+            <input type="radio" name="question2" value="no"> No
+        </div>
+
+        <div class="question" id="question3" style="display: none;">
+            <label>Do you weigh at least 50 kilograms (110 pounds)?</label>
+            <input type="radio" name="question3" value="yes" required> Yes
+            <input type="radio" name="question3" value="no"> No
+        </div>
+
+        <div class="question" id="question4" style="display: none;">
+            <label>Are you currently on any medication?</label>
+            <input type="radio" name="question4" value="yes" required> Yes
+            <input type="radio" name="question4" value="no"> No
+        </div>
+
+        <button type="button" onclick="nextQuestion()">Next</button>
+        <button type="button" onclick="checkEligibility()">Check Eligibility</button>
+    </form>
+  </div>
+
+  <form id="appointmentForm" style="display: none;">
+      <!-- Rest of the form remains unchanged -->
+      <label for="fullname">Full name: *</label>
+      <input type="fullname" id="email" placeholder="Ex : Mohamed Khabas" name="fullnmae" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="name@domaine.com" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" placeholder="+212-612345678" name="phone" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+      </select>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="bloodType">Blood Type:</label>
+      <select id="bloodType" name="bloodType" required>
+          <option value="A+">A+</option>
+          <option value="B+">B+</option>
+          <option value="O+">O+</option>
+          <option value="AB+">AB+</option>
+          <option value="A-">A-</option>
+          <option value="B-">B-</option>
+          <option value="O-">O-</option>
+          <option value="AB-">AB-</option>
+      </select>
+
+      <label for="cityTown">City/Town:</label>
+      <input type="text" id="cityTown" name="cityTown" required>
+
+       <label for="previousDonations">Previous Donations: *</label>
+       <select id="previousDonations" name="previousDonations" required>
+                      <option value="no">No</option>
+                      <option value="yes">Yes</option>
+      </select>
+
+       <label for="lastDonationDate">Last Donation Date:</label>
+       <input type="date" id="lastDonationDate" name="lastDonationDate" required>
+
+
+      <label for="healthConditions">Any Health Conditions or Medications:</label>
+      <textarea id="healthConditions" name="healthConditions" placeholder="Enter details"></textarea>
+
+      <label for="preferredContact">Preferred Contact Method:</label>
+      <select id="preferredContact" name="preferredContact" required>
+          <option value="email">Email</option>
+          <option value="phone">Phone</option>
+      </select>
+
+      <label for="availability">Preferred Donation Time:</label>
+      <input type="text" id="availability" name="availability" placeholder="E.g., Weekends, Evenings">
+
+      <label for="donationFrequency">Preferred Donation Frequency:</label>
+      <select id="donationFrequency" name="donationFrequency" required>
+          <option value="once">Once</option>
+          <option value="monthly">Monthly</option>
+          <option value="quarterly">Quarterly</option>
+          <option value="annually">Annually</option>
+      </select>
+
+      <label for="additionalComments">Additional Comments:</label>
+      <textarea id="additionalComments" name="additionalComments" placeholder="Enter any additional comments"></textarea>
+
+      <button type="submit" class="donate-link">Submit Appointment</button>
+      <!-- ... -->
+  </form>
+</div>  
+
+    <script src="script.js"></script>
+</body>
+</html>

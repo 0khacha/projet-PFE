@@ -1,35 +1,53 @@
-@import "header-style.css";
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: pink;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.animated-button img
+{ 
+  width: 50px;
+  height: 50px;
+  position:absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+
+}
+#home-icon {
+
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+}
+.login-page {
+  width: 1000px;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: pink ;
-}
 
 
-.login-page {
-  color: white;
- 
 }
 
 .login-container {
-  margin: 300px;
+
   background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
-  width: 1000px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
-
 }
+
 .login-image {
-  width: 45%; /* Adjust the width as needed */
+  width: 45%;
   align-items: end;
   height: 100%;
 }
@@ -38,9 +56,10 @@ body {
   width: 100%;
   padding-bottom: 0;
 }
+
 .login-form {
   margin-bottom: 20px;
-  border-right: 1px solid #ccc; /* Add a border on the right side */
+  border-right: 1px solid #ccc;
   display: flex;
   flex-direction: column;
   width: 45%;
@@ -55,24 +74,24 @@ h2 {
   text-align: center;
 }
 
-.form__group {
+.form__group  {
   position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
+  margin-top: 20px;
   width: auto;
+
+
 }
 
 .form__field {
-  font-family: inherit;
   border: 0;
   border-bottom: 1px solid #9b9b9b;
   outline: 0;
   font-size: 1rem;
   color: white;
-  padding: 7px 0;
+  padding: 10px 0;
   background: transparent;
   transition: border-color 0.2s;
-
+  width: 100%;
   &::placeholder {
     color: transparent;
   }
@@ -80,35 +99,35 @@ h2 {
   &:placeholder-shown ~ .form__label {
     font-size: 1rem;
     cursor: text;
-    top: 20px;
+    top: 10px;
   }
 }
 
 .form__label {
   position: absolute;
-  top: 0;
+  top: -10px;
   display: block;
   transition: 0.2s;
-  font-size: 1rem;
+
   color: #9b9b9b;
 }
 
 .form__field:focus ~ .form__label {
   position: absolute;
-  top: 0;
+  top: -10px;
   display: block;
-  transition: 0.2s;
-  font-size: 1rem;
+  transition: 0.3s;
   color: red;
   font-weight: 700;
+
 }
 
 .form__field:focus {
-  padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
   border-image: linear-gradient(to right, #11998e, #38ef7d);
   border-image-slice: 1;
+ 
 }
 
 /* reset input */
@@ -116,21 +135,45 @@ h2 {
 .form__field:invalid {
   box-shadow: none;
 }
+#togglePassword {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.fa-eye-slash {
+  color: #999;
+}
+.form__checkbox {
+  margin-right: 10px; /* Adjust the spacing between the checkbox and label */
+
+}
+
+.form__label-checkbox {
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__checkbox:focus + .form__label-checkbox {
+  color: red; /* Adjust color on focus if needed */
+}
 button {
   margin-top: 20px;
   width: 300px;
   padding: 10px;
   background-color: rgb(220, 124, 124);
-  transition-property: background-color,border-color,color,box-shadow,filter;
-                    transition-duration: .3s;
-                    border: 1px solid transparent;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: .3s;
+  border: 1px solid transparent;
   color: black;
-
   border-radius: 5px;
   font-weight: 700;
   cursor: pointer;
   transition: border-color 200ms ease-in 0s;
 }
+
 button:hover {
   background-color: rgb(95, 71, 71);
   transform: scale(1.04);

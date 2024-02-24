@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <?php
-    include 'UserController.php';
-
+    include 'controllers/UserController.php';
+    UserController::checkLoggedIn();
+     // Check if the user is logged in
     UserController::handleButtonClick();  // Handle user button click actions
     ?>
     <meta charset="UTF-8">

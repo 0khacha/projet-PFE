@@ -1,0 +1,161 @@
+/* Reset some default styles */
+body, h1, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color: red;
+
+}
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+    color: white;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+.admin-logo-container {
+    text-align: center;
+}
+
+.admin-logo-container img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.admin-logo-container h2 {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.statistics-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 500px;
+
+
+}
+
+.statistic-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 40px;
+
+
+}
+
+.statistic-box h3 {
+    color: #333;
+}
+
+.statistic-number {
+    font-size: 2em;
+    color: #4CAF50;
+}
+
+.recent-activities {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recent-activities h2 {
+    color: #333;
+}
+
+.recent-activities ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recent-activities li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.recent-activities li:before {
+    content: "\2022";
+    color: #4CAF50;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+#userTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#userTable th, #userTable td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+#userTable th {
+    background-color: #3498db;
+    color: #ecf0f1;
+}
+
+#userTable tbody tr:hover {
+    background-color: #ecf0f1;
+}
+
+/* Add more styling as needed for a professional look */

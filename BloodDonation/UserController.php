@@ -24,7 +24,13 @@ class UserController {
         }
     }
     
-
+    public static function checkLoggedIn() {
+        if (!self::isLoggedIn()) {
+            // Redirect to the login page or any other page as needed
+            self::redirectTo("login.php");
+            exit();
+        }
+    }
     private static function handleDonate() {
       if (self::isLoggedIn()) {
           self::redirectTo("donate.php");

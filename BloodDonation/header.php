@@ -2,13 +2,8 @@
 <html lang="en">
 <head>
     <?php
-    include 'UserController.php';
-    UserController::handleButtonClick();  // Handle user button click actions
-        // Check if the user is logged in
-    $isUserLoggedIn = isset($_SESSION['user_id']);
-
+    include 'controllers/UserController.php';
     ?>
-
 <!-- Navigation for logged-in users -->
 
   <meta charset="UTF-8">
@@ -16,7 +11,7 @@
   <link rel="stylesheet" href="css/header-style.css">
 </head>
 <body>
-  <?php if ($isUserLoggedIn): ?>
+  <?php if (UserController::isLoggedIn()): ?>
     <nav class="top-nav">
         <!-- ... (your existing logged-out navigation items) ... -->
         <a class="animated-button" href="index.php" title="Home">
@@ -93,15 +88,13 @@
         <div class="dropdown-content">
           <a href="howtodonate.php">How to donate </a>
           <a href="donate.php?action=donate" name="headerBtn" value="donateBlood">Donate</a>
-          <a href="bloodRequests.html">Else</a>
         </div>
       </div>
       <div class="header-dropdown">
         <button type="submit" name="headerBtn" value="requestBlood" class="header-btn">Request Blood</button>
         <div class="dropdown-content">
             <a href="howtodonate.php">How to Request</a>
-            <a href="donate.php?action=donate" >Donate</a>
-            <a href="donate.php" >Request</a>
+            <a href="donate.php?action=donate" >Request</a>
         </div>
        
       </div>
