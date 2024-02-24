@@ -1,73 +1,154 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "UsersManagement.php", true);
-  xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-          var userData = JSON.parse(xhr.responseText);
-          populateUserTable(userData);
-      }
-  };
-  xhr.send();
+document.addEventListener("DOMContentLoaded", () => {
+    fetchUserData();
 });
 
-// Function to populate the user table
+async function fetchUserData() {
+    try {
+        const response = await fetch("UsersManagement.php");
+        if (!response.ok) {
+            throw new Error(`Error fetching user data: ${response.statusText}`);
+        }
+
+        const userData = await response.json();
+        populateUserTable(userData);
+    } catch (error) {
+        console.error('Error fetching user data:', error.message);
+    }
+}
+
 function populateUserTable(userData) {
-  var tableBody = document.querySelector("#userTable tbody");
+    const tableBody = document.querySelector("#userTable tbody");
 
-  userData.forEach(function (user) {
-      var row = document.createElement("tr");
-      row.innerHTML = `
-          <td>${user.id}</td>
-          <td>${user.username}</td>
-          <td>${user.email}</td>
-          <td>${user.usertype}</td>
-          <td>
-              <button onclick="givePrivilege(${user.id})">Give Privilege</button>
-              <button onclick="confirmDelete(${user.id})">Delete User</button>
-          </td>
+    // Clear existing rows
+    tableBody.innerHTML = "";
+
+    userData.forEach(user => {
+        const row = createUserRow(user);
+        tableBody.appendChild(row);
+    });
+}
+
+function createUserRow(user) {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td>${user.id}</td>
+        <td>${user.username}</td>
+        <td>${user.email}</td>
+        <td>${user.usertype}</td>
+        <td>
+          <button onclick="givePrivilege(${user.id})">Give Privilege</button>
+          <button onclick="editUserType(${user.id})">Edit User Type</button>
+          <button onclick="confirmDelete(${user.id})">Delete User</button>
+        </td>
       `;
-      tableBody.appendChild(row);
-  });
+    return row;
 }
 
-// Function to confirm user deletion
-function confirmDelete(userId) {
-  // Show confirmation modal
-  document.getElementById("confirmationModal").style.display = "block";
+async function editUserType(userId) {
+    const editUserTypeModal = document.getElementById("editUserTypeModal");
+    editUserTypeModal.style.display = "block";
 
-  // Store the user id to be deleted
-  document.getElementById("confirmationModal").dataset.userId = userId;
+    try {
+        const user = await getUserById(userId);
+
+        if (user && user.usertype !== undefined) {
+            const userTypeSelect = document.getElementById("newUserType");
+            userTypeSelect.value = user.usertype;
+            editUserTypeModal.dataset.userId = userId;
+        } else {
+            console.error("Invalid user data or usertype not found");
+        }
+    } catch (error) {
+        console.error('Error editing user type:', error.message);
+    }
 }
 
-// Function to cancel user deletion
+async function getUserById(userId) {
+    try {
+        const response = await fetch(`UsersManagement.php?action=getUserById&userId=${userId}`);
+        if (!response.ok) {
+            throw new Error(`Error fetching user by ID: ${response.statusText}`);
+        }
+
+        const user = await response.json();
+        return user;
+    } catch (error) {
+        console.error('Error fetching user by ID:', error.message);
+        return null;
+    }
+}
+
+async function updateUserType() {
+    const userId = document.getElementById("editUserTypeModal").dataset.userId;
+    const newUserType = document.getElementById("newUserType").value;
+
+    try {
+        const response = await fetch("UsersManagement.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: `action=updateUserType&userId=${userId}&newUserType=${newUserType}`,
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error updating user type: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+
+        if (result.success) {
+            console.log(result.message);
+            fetchUserData();
+            closeEditUserTypeModal();
+        } else {
+            console.error(result.message);
+        }
+    } catch (error) {
+        console.error('Error updating user type:', error.message);
+    }
+}
+
+function closeEditUserTypeModal() {
+    document.getElementById("editUserTypeModal").style.display = "none";
+}
 function cancelDelete() {
-  // Hide confirmation modal
-  document.getElementById("confirmationModal").style.display = "none";
-
-  // Clear stored user id
-  delete document.getElementById("confirmationModal").dataset.userId;
+    document.getElementById("confirmationModal").style.display = "none";
 }
 
-// Function to perform the actual user deletion
-function deleteUser() {
-  var userId = document.getElementById("confirmationModal").dataset.userId;
+function confirmDelete(userId) {
+    const modal = document.getElementById("confirmationModal");
+    modal.style.display = "block";
+    modal.dataset.userId = userId;
+}
 
-  // Make an AJAX request to delete user
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "UsersManagement.php", true);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-          // Handle the response (you may reload the user table or show a success message)
-          console.log(xhr.responseText);
-          // Reload the user table after deletion
-          window.location.reload();
-      }
-  };
+async function deleteUser() {
+    const userId = document.getElementById("confirmationModal").dataset.userId;
 
-  // Send a POST request with the action set to 'deleteUser' and userId parameter
-  xhr.send("action=deleteUser&userId=" + userId);
+    try {
+        const response = await fetch("UsersManagement.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: `action=deleteUser&userId=${userId}`,
+        });
 
-  // Hide confirmation modal
-  document.getElementById("confirmationModal").style.display = "none";
+        if (!response.ok) {
+            throw new Error(`Error deleting user: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+
+        if (result.success) {
+            console.log(result.message);
+            fetchUserData();
+        } else {
+            console.error(result.message);
+        }
+    } catch (error) {
+        console.error('Error deleting user:', error.message);
+    }
+
+    document.getElementById("confirmationModal").style.display = "none";
 }
