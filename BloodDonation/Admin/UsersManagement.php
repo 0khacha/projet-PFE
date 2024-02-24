@@ -1,46 +1,109 @@
 <?php
-// Your database connection details
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "donation";
+header('Content-Type: application/json');
+header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
+header('Content-Security-Policy: default-src "none"');
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+include('../controllers/db_connection.php');
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['action'])) {
+        if ($_POST['action'] === 'deleteUser') {
+            deleteUser($pdo);
+        } elseif ($_POST['action'] === 'updateUserType') {
+            updateUserType($pdo);
+        }
+    }
 }
 
-// Check if a delete request is made
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'deleteUser') {
-    // Get user ID from POST data
-    $userId = $_POST['userId'];
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] === 'getUserById') {
+            getUserById($pdo);
+        }
+    }
+}
 
-    // Delete the user from the database
-    $deleteSql = "DELETE FROM users WHERE id = ?";
-    $deleteStmt = $conn->prepare($deleteSql);
-    $deleteStmt->bind_param("i", $userId);
+$sql = "SELECT * FROM users";
+$result = $pdo->query($sql);
+// Fetch data as an associative array
+$data = $result->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($deleteStmt->execute()) {
-        echo "User deleted successfully";
-    } else {
-        echo "Error deleting user: " . $conn->error;
+// Output the data as JSON
+echo json_encode($data);
+
+// No need to explicitly close the PDO connection, as it will be closed automatically
+// when the script finishes execution
+
+function deleteUser($pdo) {
+    // Validate and sanitize user input
+    $userId = filter_input(INPUT_POST, 'userId', FILTER_VALIDATE_INT);
+
+    if ($userId === false || $userId === null) {
+        echo json_encode(['success' => false, 'message' => 'Invalid user ID']);
+        exit();
     }
 
-    // Close the database connection and exit
-    $conn->close();
+    $deleteSql = "DELETE FROM users WHERE id = ?";
+    $deleteStmt = $pdo->prepare($deleteSql);
+    $deleteStmt->bindParam(1, $userId, PDO::PARAM_INT);
+
+    try {
+        $deleteStmt->execute();
+        echo json_encode(['success' => true, 'message' => 'User deleted successfully']);
+    } catch (PDOException $e) {
+        echo json_encode(['success' => false, 'message' => 'Error deleting user: ' . $e->getMessage()]);
+    }
+
     exit();
 }
 
-// Fetch users from the database
-$sql = "SELECT * FROM users";
-$result = $conn->query($sql);
+function updateUserType($pdo) {
+    // Validate and sanitize user input
+    $userId = filter_input(INPUT_POST, 'userId', FILTER_VALIDATE_INT);
+    $newUserType = filter_input(INPUT_POST, 'newUserType', FILTER_SANITIZE_STRING);
 
-// Close the database connection
-$conn->close();
+    if ($userId === false || $userId === null || $newUserType === null) {
+        echo json_encode(['success' => false, 'message' => 'Invalid input']);
+        exit();
+    }
 
-// Return user data as JSON
-echo json_encode($result->fetch_all(MYSQLI_ASSOC));
+    $updateSql = "UPDATE users SET usertype = ? WHERE id = ?";
+    $updateStmt = $pdo->prepare($updateSql);
+    $updateStmt->bindParam(1, $newUserType, PDO::PARAM_STR);
+    $updateStmt->bindParam(2, $userId, PDO::PARAM_INT);
+
+    try {
+        $updateStmt->execute();
+        echo json_encode(['success' => true, 'message' => 'User type updated successfully']);
+    } catch (PDOException $e) {
+        echo json_encode(['success' => false, 'message' => 'Error updating user type: ' . $e->getMessage()]);
+    }
+
+    exit();
+}
+
+function getUserById($pdo) {
+    // Validate and sanitize user input
+    $userId = filter_input(INPUT_GET, 'userId', FILTER_VALIDATE_INT);
+
+    if ($userId === false || $userId === null) {
+        echo json_encode(['success' => false, 'message' => 'Invalid user ID']);
+        exit();
+    }
+
+    $selectSql = "SELECT * FROM users WHERE id = ?";
+    $selectStmt = $pdo->prepare($selectSql);
+    $selectStmt->bindParam(1, $userId, PDO::PARAM_INT);
+
+    try {
+        $selectStmt->execute();
+        $user = $selectStmt->fetch(PDO::FETCH_ASSOC);
+        echo json_encode($user);
+    } catch (PDOException $e) {
+        echo json_encode(['success' => false, 'message' => 'Error fetching user: ' . $e->getMessage()]);
+    }
+
+    exit();
+}
 ?>
