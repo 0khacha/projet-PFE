@@ -1,0 +1,88 @@
+/* Reset some default styles */
+@import "admin-syle.css";
+/* Content Styles */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    align-items: center;
+}
+
+h2 {
+    color: red;
+}
+.table-section
+{
+  overflow-y: auto; /* Enable vertical scrolling */
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+/* Table Styles */
+table {
+    width: 200vh;
+    border-collapse: collapse;
+    margin-top: 20px;
+    
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1; /* To ensure the header is above the content */
+  
+}
+
+#userTable tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Modal Styles */
+#editUserTypeModal, #confirmationModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+select, button {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+
+  background-color: #ED4557;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+  transition-property: background-color,border-color,color,box-shadow,filter;
+  transition-duration: .3s;
+  border: 1px solid transparent;
+  color: white;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.04);
+  font-style: oblique;
+  color: black;
+}

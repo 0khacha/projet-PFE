@@ -4,13 +4,13 @@ $db = 'donation';
 $user = 'root';
 $pass = ''; // Replace with your actual database password
 
-$dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+$pdo = "mysql:host=$host;dbname=$db;charset=utf8mb4";
 
 try {
-    $pdo = new PDO($dsn, $user, $pass);
+    $pdo = new PDO($pdo, $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    // In a production environment, consider logging errors instead of displaying them
+    // Log or handle the error appropriately (don't display errors to users in production)
     die("Connection failed: " . $e->getMessage());
 }
 ?>

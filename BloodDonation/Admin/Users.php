@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin-style.css">
     <script src="Users.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <title>User Management</title>
 </head>
 <body>
@@ -22,8 +23,8 @@
         </ul>
     </div>
     <div class="content">
-        <h2>User Management</h2> 
-        <!-- Your user management table goes here -->
+        <h2>User Management</h2>
+        <div class="table-section">
         <table id="userTable">
             <thead>
                 <tr>
@@ -38,10 +39,23 @@
                 <!-- User data will be populated here dynamically using JavaScript -->
             </tbody>
         </table>
+        <div id="editUserTypeModal" style="display: none;">
+            <form>
+                <label for="newUserType">New User Type:</label>
+                <select id="newUserType">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button type="button" onclick="updateUserType()">Update</button>
+                <button type="button" onclick="closeEditUserTypeModal()">Cancel</button>
+            </form>
+        </div>
+
         <div id="confirmationModal" style="display: none;">
             <p>Are you sure you want to delete this user?</p>
-            <button onclick="confirmDelete()">Yes</button>
+            <button onclick="deleteUser()">Yes</button>
             <button onclick="cancelDelete()">No</button>
+        </div>
         </div>
     </div>
 

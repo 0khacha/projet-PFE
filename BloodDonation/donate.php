@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
-    <?php
+<?php
     include 'controllers/UserController.php';
     UserController::checkLoggedIn();
-     // Check if the user is logged in
-    UserController::handleButtonClick();  // Handle user button click actions
+    UserController::handleButtonClick();
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <link rel="stylesheet" href="css/donate.css" type="text/css" class="light-mode">
     <link rel="icon" href="image/logo2.png">
     <title>Donate Blood - Blood Donation Organization</title>
@@ -141,15 +142,16 @@
        
         <div class="Appoinments-section">
             <h2>Schedule Your Blood Donation Appointment</h2>
-            <p style="font: italic;">Fill out the form provided to schedule your blood donation appointment. Once completed, we will notify you about the nearest blood center or the date of a blood drive in your city.</p>
-            <form class="donate-form">
+            <p style="font: italic;">Complete the form to arrange your blood donation appointment. After submission, you will secure an appointment at the selected blood center.</p>
+            <form class="donate-form" action="controllers/BloodDonationController.php" method="POST"> <!-- Add action and method -->
+            <!-- ... (rest of your form content) ... -->
                  <label for="fullname">Full name: *</label>
-                <input type="fullname" id="email" placeholder="Ex : Mohamed Khabas" name="fullnmae" required>
+                <input type="text" id="email" placeholder="Ex : Mohamed Khabas" name="fullname" required>
 
-                <label for="email">Email:</label>
+                <label for="email">Email: *</label>
                 <input type="email" id="email" placeholder="name@domaine.com" name="email" required>
 
-                <label for="phone">Phone Number:</label>
+                <label for="phone">Phone Number: *</label>
                 <input type="tel" id="phone" placeholder="+212-612345678" name="phone" required>
 
                 <label for="gender">Gender:</label>
@@ -158,8 +160,8 @@
                     <option value="female">Female</option>
                 </select>
 
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" required>
+                <label for="age">Age: *</label>
+                <input min="18" type="number" id="age" name="age" required>
 
                 <label for="bloodType">Blood Type:</label>
                 <select id="bloodType" name="bloodType" required>
@@ -173,8 +175,13 @@
                     <option value="AB-">AB-</option>
                 </select>
 
-                <label for="cityTown">City/Town:</label>
+                <label for="cityTown">City/Town: *</label>
                 <input type="text" id="cityTown" name="cityTown" required>
+
+                <label for="bloodDonationCenter">Blood Donation Center:</label>
+                <select id="bloodDonationCenter" name="bloodDonationCenter" required>
+                    <!-- Options will be dynamically populated based on the selected city -->
+                </select>
  
                  <label for="previousDonations">Previous Donations: *</label>
                  <select id="previousDonations" name="previousDonations" required>
@@ -182,14 +189,14 @@
                                 <option value="yes">Yes</option>
                 </select>
 
-                 <label for="lastDonationDate">Last Donation Date:</label>
-                 <input type="date" id="lastDonationDate" name="lastDonationDate" required>
+                <label for="lastDonationDate" id="lastDonationDateLabel" style="display: none;">Last Donation Date:  </label>
+                <input type="date" id="lastDonationDate" name="lastDonationDate"  style="display: none;">
 
 
                 <label for="healthConditions">Any Health Conditions or Medications:</label>
                 <textarea id="healthConditions" name="healthConditions" placeholder="Enter details"></textarea>
 
-                <label for="preferredContact">Preferred Contact Method:</label>
+                <label for="preferredContact">Preferred Contact Method: *</label>
                 <select id="preferredContact" name="preferredContact" required>
                     <option value="email">Email</option>
                     <option value="phone">Phone</option>
@@ -216,6 +223,7 @@
     </div>
     <div id="footer-placeholder"></div>
     <script src="js/footer.js"></script>
+    <script src="js/bloodDonationCenters.js"></script>
     <script src="js/dark-mode.js"></script>
     <script src="js/condition-dispaly.js"></script>
 
