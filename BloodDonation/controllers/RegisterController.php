@@ -1,17 +1,39 @@
 <?php
-require_once '../db_connection.php';
+session_start();
+require_once 'db_connection.php';
+
+// Validate CSRF token
 
 if (isset($_POST["registerForm"])) {
-    // Handle registration form submission
+    // Validate required fields and email format
     $newUsername = $_POST["newUsername"];
     $newEmail = $_POST["newEmail"];
     $newPassword = $_POST["newPassword"];
     $confirmPassword = $_POST["confirmPassword"];
 
+    if (empty($newUsername) || empty($newEmail) || empty($newPassword) || empty($confirmPassword)) {
+        $_SESSION['error_message'] = "All fields are required. Please fill out the complete form.";
+        header("Location: ../login.php");
+        exit();
+    }
+
+    if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
+        $_SESSION['error_message'] = "Invalid email format. Please enter a valid email address.";
+        header("Location: ../login.php");
+        exit();
+    }
+
+    // Enforce password strength
+    if (strlen($newPassword) < 8 || !preg_match('/[A-Za-z]/', $newPassword) || !preg_match('/\d/', $newPassword)) {
+        $_SESSION['error_message'] = "Password must be at least 8 characters long and contain both letters and numbers.";
+        header("Location: ../login.php");
+        exit();
+    }
+
     // Additional validation: Username should not contain spaces
     if (strpos($newUsername, ' ') !== false) {
         $_SESSION['error_message'] = "Username should not contain spaces. Please choose another.";
-        header("Location: ../../login.php");
+        header("Location: ../login.php");
         exit();
     }
 
@@ -28,11 +50,11 @@ if (isset($_POST["registerForm"])) {
         } else {
             $_SESSION['error_message'] = "Email already exists. Please choose another.";
         }
-        header("Location: ../../login.php");
+        header("Location: ../login.php");
         exit();
-    } elseif ($newPassword !== $confirmPassword) {
+    } elseif (!password_verify($confirmPassword, $hashedPassword)) {
         $_SESSION['error_message'] = "Passwords do not match. Please try again.";
-        header("Location: ../../login.php");
+        header("Location: ../login.php");
         exit();
     } else {
         // Assign a default role for new users
@@ -66,7 +88,8 @@ if (isset($_POST["registerForm"])) {
 
         unset($_SESSION['redirect_page']);
 
-        header("Location: ../../$redirectPage");
+        header("Location: ../$redirectPage");
         exit();
     }
 }
+?>
