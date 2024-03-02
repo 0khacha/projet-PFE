@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" type="text/css" class="light-mode">
-    <link rel="icon" href="image/logo.png">
+    <link rel="icon" href="image/logo.svg">
     <title>Donate. Just Do It MA</title>
 </head>
 
@@ -22,8 +22,19 @@
     <!-- Blood Donation Section -->
     <div class="blood-donation-section">
         <div class="content-container">
-            <div class="text-content">
-                <h1>Your Blood Donation Can Make a Significant Impact.</h1>
+            
+            <div class="text-content"> 
+            <?php
+                    $userData = UserController::getUserData();
+
+                    if ($userData) {
+                        $welcomeMessage =  $userData['username'] .",". "<br>Welcome to Gafus!";
+                    } else {
+                        $welcomeMessage = "Welcome to Gafus !";
+                    }
+             ?>
+
+                    <h1><?php echo $welcomeMessage; ?></h1>
                 <p>
                     Welcome to Gafus, our blood donation hub! Consider this your personal invitation to make a life-changing impact. Today, we encourage you to donate blood and be the lifeline someone desperately needs. Your generous contribution can mean the difference between life and death for those in medical emergencies, undergoing surgeries, or battling chronic illnesses.
                     <br> Remember, a single pint of your blood has the power to save up to three lives. It's a simple yet profound act that costs nothing but time and leaves an everlasting impact on others. Every drop counts, turning every donor into a hero. Your kindness, compassion, and selflessness create a ripple effect of hope and healing in our community.
@@ -42,6 +53,7 @@
     <!-- Blood Request Section -->
     <div class="blood-request-section">
         <div class="request-content-container">
+
             <div class="request-text-content">
                 <h1>A Call for Compassion: Urgent Blood Donation Appeal.</h1>
                 <p>
@@ -131,7 +143,7 @@
             </div>
         </div>
     </div>
-
+    <script src="js/request-text-content.js"></script>
     <!-- Footer -->
     <div id="footer-placeholder"></div>
     <script src="js/footer.js"></script>

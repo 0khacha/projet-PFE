@@ -23,7 +23,7 @@
         <a class="animated-button" href="#" title="My Notification">
            <img src="icons/notification.gif" alt="notification Icon">
         </a>|
-        <a class="animated-button" litle="How to help">
+        <a class="animated-button" href="howtohelp.php" litle="How to help">
             <img src="icons/help-center.gif" alt="help in Icon">
         </a>|
         <a class="animated-button" href="contactus.php" litle="Contact Us">
@@ -42,8 +42,7 @@
             <img src="icons/account.gif" alt="Account  Icon">
           <!-- account Dropdown -->
           <nav class="account-dropdown">
-            <a href="#">Setting</a>
-            <a href="#">عربي</a>
+            <a href="profile.php">Setting</a>
             <a href="logout.php">Log out</a>
           </nav>
         </nav>
@@ -54,7 +53,7 @@
            <img src="icons/home.gif" alt="Home Icon">
         </a>|
         <a class="animated-button" litle="How to Help">
-            <img src="icons/help-center.gif" alt="help in Icon">
+            <img src="icons/help-center.gif" href="howtohelp.php" alt="help in Icon">
         </a>|
         <a class="animated-button" href="contactus.php"litle="Contact Us">
             <img src="icons/contact.gif" alt="contact in Icon">
@@ -79,7 +78,7 @@
   <div class="header-container">
     <a href="index.php">
       <nav class="logo-container">
-          <img class="logo" src="image/logo.png" alt="Blood Donation Logo">
+          <img class="logo" src="image/logo.svg" alt="Blood Donation Logo">
       </nav>
     </a>
     <div class="buttons-container">
@@ -94,7 +93,7 @@
         <button type="submit" name="headerBtn" value="requestBlood" class="header-btn">Request Blood</button>
         <div class="dropdown-content">
             <a href="howtodonate.php">How to Request</a>
-            <a href="donate.php?action=donate" >Request</a>
+            <a href="bloodRequests.php?action=request" >Request</a>
         </div>
        
       </div>
@@ -111,8 +110,15 @@
       <div class="header-dropdown">
         <button class="header-btn">Learn</button>
         <div class="dropdown-content">
-          <a href="#">Volunteer</a>
-          <a href="#">Organize an Event</a>
+          <a href="learn.php#why-donate">Why Donate</a>
+          <a href="learn.php#who-can-donate">Who Can Donate</a>
+          <a href="learn.php#how-to-donate">How to donate</a>
+          <a href="learn.php#benefits">Benefits</a>
+          <a href="learn.php#donation-process">Donation process</a>
+          <a href="learn.php#myths-and-facts">myths & facts</a>
+          <a href="learn.php#blood-types">Blood types</a>
+
+
         </div>
       </div>
       <div class="header-dropdown">

@@ -1,0 +1,84 @@
+@import "style.css";
+
+
+h1, h2, h3 {
+  color: #cc0000; /* Dark red heading color */
+  font-size: 1.5em;
+  font-weight: 900;
+}
+p{
+  font-size: 1em;
+  line-height: 1.6;
+  text-align: justify;
+  color: var(--gray2);
+}
+.dark-mode p{
+  color: aliceblue;
+}
+
+
+section {
+  background-color: rgba(255, 255, 255, 0.9); /* White background for sections with 0.9 opacity */
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.show {
+opacity: 1;
+transform: translateY(0);
+}
+.dark-mode section
+{
+  background-color: #555;
+
+}
+li
+{
+  margin-bottom: 10px;
+}
+
+/* Style links */
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  section {
+      margin: 10px;
+      padding: 15px;
+  }
+}
+
+/* Style the boxes for each section */
+section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Style the header for each section */
+section h2 {
+  border-bottom: 2px solid #cc0000; /* Dark red underline for headings */
+  padding-bottom: 10px;
+  
+}
+
+/* Style the blood type list */
+#blood-types ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#blood-types li {
+  margin-bottom: 10px;
+  
+}
+ul ,ol
+{
+  margin-left: 60px;
+}

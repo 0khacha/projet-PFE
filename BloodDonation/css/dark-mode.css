@@ -9,7 +9,11 @@ body.dark-mode {
   cursor: default;
 }
 
+.dark-mode input
+{
 
+ background-color: #ddd;
+}
 
 .dark-mode .text-content p {
  

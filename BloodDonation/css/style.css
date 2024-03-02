@@ -6,13 +6,14 @@
 @import "contactus.css";
 @import "newsandevent.css";
 @import "find_blood.css";
+@import "header-style.css";
 
 /* Body styles */
 :root {
   --body-background-color: #f8f8f8;
-   --red : #ED4557;
-    --gray : #333;
-    --gray2 : #555;
+  --red: #ED4557;
+  --gray: #333;
+  --gray2: #555;
   --body-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -20,28 +21,38 @@ body {
   background-color: var(--body-background-color);
   margin: 0;
   font-family: var(--body-font-family);
+
+
 }
 
 .blood-donation-section {
   padding: 0;
   background: url('../image/canvaV2.svg') no-repeat center;
-  background-size: 80px;
   background-size: cover;
   margin-bottom: 10px;
 }
+.blood-donation-section .content-container{
+opacity: 0; /* Set initial opacity to 0 */
+transform: translateX(-60%);
+transition: opacity 0.8s, transform 2s; /* Add transitions for smooth animation */
+}
 
+.blood-donation-section .content-container.show {
+opacity: 1;
+transform: translateX(0%); /* Move the box to its original position */
+}
 /* Text content styles */
 .text-content {
   width: 45%;
-  color:var(--gray);
+  color: var(--gray);
   padding-right: 50px;
 }
 
 .text-content h1 {
-  font-size: 2.5em;
+  font-size: 3.5em;
   margin-bottom: 15px;
   color: var(--red);
-  text-align: justify;
+  font-weight: 900;
 }
 
 .text-content p {
@@ -49,7 +60,7 @@ body {
   margin-bottom: 30px;
   line-height: 1.6;
   text-align: justify;
-  color:var(--gray2);
+  color: var(--gray2);
 }
 
 .cta-container {
@@ -58,19 +69,17 @@ body {
 
 /* Donate link styles */
 .donate-link {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--red);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
-    transition-property: background-color,border-color,color,box-shadow,filter;
-    transition-duration: .3s;
-    border: 1px solid transparent;
-    color: white;
-    border-radius: 5px;
-    font-weight: 700;
-    cursor: pointer;
-    margin-bottom: 100px;
-
+  width: 100%;
+  padding: 10px;
+  background-color: var(--red);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s, filter 0.3s;
+  border: 1px solid transparent;
+  color: white;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 100px;
 }
 
 .donate-link:hover {
@@ -93,18 +102,26 @@ body {
   align-items: center;
   margin: 0 auto;
 }
-
 .request-text-content {
+  margin: 0;
   width: 30%;
   background-color: var(--red);
   padding: 40px;
   border-radius: 8px;
-  margin-right: 100px;
   height: auto;
+  opacity: 0; /* Set initial opacity to 0 */
+  transform: translateX(-100%);
+  transition: opacity 0.8s, transform 2s; /* Add transitions for smooth animation */
+}
+
+.request-text-content.show {
+  margin-right: 100px;
+  opacity: 1;
+  transform: translateX(0%); /* Move the box to its original position */
 }
 
 .request-image {
-  width: 35%;
+  width: 30%;
   margin-left: 60px;
 }
 
@@ -122,10 +139,9 @@ body {
   max-width: 25%;
   height: auto;
   display: block;
-  margin-top: 0;
   margin: auto;
-  margin-top: -220px;
-  margin-bottom: -80px;
+  margin-top: -80px;
+  margin-bottom: -20px;
 }
 
 .why-content-container {

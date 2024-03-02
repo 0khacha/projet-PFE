@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin-style.css">
     <script src="Users.js"></script>
+    <link rel="icon" href="../image/logo.png">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <title>User Management</title>
 </head>
 <body>
 <div class="sidebar">
         <div class="admin-logo-container">
-            <img src="image/admin-logo.png" alt="Admin Logo">
+            <img src="../image/logo.png" alt="Admin Logo">
             <h2>Admin Panel</h2>
         </div>
         <ul>

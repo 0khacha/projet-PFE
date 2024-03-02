@@ -2,11 +2,16 @@
 <html lang="en">
 
 <head>
+    <?php
+    include '../controllers/UserController.php';
+    UserController::checkLoggedIn();
+
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin-style.css" type="text/css">
-    <link rel="icon" href="image/admin-logo.png">
+    <link rel="icon" href="../image/logo.svg">
     <title>Admin Dashboard - Blood Donation</title>
 </head>
 
@@ -14,14 +19,14 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="admin-logo-container">
-            <img src="image/admin-logo.png" alt="Admin Logo">
+            <img src="../image/logo.png" alt="Admin Logo">
             <h2>Admin Panel</h2>
         </div>
         <ul>
             <li class="active"><a href="#">Dashboard</a></li>
             <li><a href="Users.php">Users</a></li>
             <li><a href="#">Donations</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="#">Centres</a></li>
             <li><a href="../logout.php">Logout</a></li>
         </ul>
     </div>

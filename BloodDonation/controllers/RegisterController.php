@@ -2,7 +2,6 @@
 session_start();
 require_once 'db_connection.php';
 
-// Validate CSRF token
 
 if (isset($_POST["registerForm"])) {
     // Validate required fields and email format
@@ -52,7 +51,7 @@ if (isset($_POST["registerForm"])) {
         }
         header("Location: ../login.php");
         exit();
-    } elseif (!password_verify($confirmPassword, $hashedPassword)) {
+    } elseif (!$newPassword = $confirmPassword) {
         $_SESSION['error_message'] = "Passwords do not match. Please try again.";
         header("Location: ../login.php");
         exit();

@@ -1,0 +1,52 @@
+@import "style.css";
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    height: 60%;
+}
+h1
+{
+  color: #ED4557;
+}
+
+.container form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.container label {
+  display: block;
+  margin-top: 10px;
+  color: #333;
+}
+
+input[name="newUsername"],
+input[name="newPassword"],
+input[name="confirmPassword"],
+input[name="email"],
+input[name="previousPassword"]  {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+input[name="updateProfile"] {
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+input[name="updateProfile"]:hover {
+  background-color: #45a049;
+}
+

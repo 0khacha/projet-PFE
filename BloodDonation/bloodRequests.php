@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bloodRequests.css" type="text/css" class="light-mode">
-    <link rel="icon" href="image/logo2.png">
+    <link rel="icon" href="image/logo.svg">
     <title>Request Blood - Donate. Just Do It MA</title>
 </head>
 
@@ -26,14 +26,23 @@
             <div class="text-content2">
                 <h2>Request Blood - Help Us Save Lives!</h2>
                 <p>If you or someone you know is in need of blood, please fill out the form below. We will do our best to connect you with potential donors.</p>
-
+                <?php
+                if (isset($_GET['error'])) {
+                    echo '<p style="color: red;">' . htmlspecialchars($_GET['error']) . '</p>';
+                }
+                
+                if (isset($_GET['success'])) {
+                    echo '<p style="color: green;">' . htmlspecialchars($_GET['success']) . '</p>';
+                }
+                ?>
                 <!-- Blood Request Form -->
-                <form id="bloodRequestForm" action="submit_request.php" method="post">
+                <form id="bloodRequestForm" action="controllers/submit_request.php" method="post">
                     <label for="patientName">Patient's Name: *</label>
-                    <input type="text" id="patientName" name="patientName" required>
+                    <input type="text" id="patientName" name="patientName" >
 
                     <label for="bloodType">Blood Type: *</label>
-                    <select id="bloodType" name="bloodType" required>
+                    <select id="bloodType" name="bloodType" >
+                        <option value="none">unknonw</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
                         <option value="B+">B+</option>
@@ -45,20 +54,20 @@
                     </select>
 
                     <label for="urgency">Urgency: *</label>
-                    <select id="urgency" name="urgency" required>
+                    <select id="urgency" name="urgency" >
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
                         <option value="Low">Low</option>
                     </select>
 
                     <label for="patientName">City: *</label>
-                    <input type="text" id="CityName" name="CitytName" required>
+                    <input type="text" id="CityName" name="CitytName" >
 
                     <label for="hospital">Hospital Name:</label>
                     <input type="text" id="hospital" name="hospital" >
 
                     <label for="contact">Contact Information: *</label>
-                    <input type="text" id="contact" name="contact" placeholder="Email/Phone" required>
+                    <input type="text" id="contact" name="contact" placeholder="Email/Phone" >
 
                     <button class="donate-link" type="submit">Submit Request</button>
                 </form>

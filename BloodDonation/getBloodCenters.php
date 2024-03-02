@@ -9,6 +9,8 @@ $bloodDonationCenters = [
     "CASABLANCA" => ["Center2A-casa", "Center2B-casa", "Center2C-casa"],
     "MARAKECH" => ["Center1A-marakesh", "Center2B-marakesh", "Center2C-marakesh"],
     "GUELMIM" => ["Centre Régional de Transfusion Sanguine - Gulmim  ", "Blood Centre Agadir -Lkods Guelmim ", "Center1C"],
+    "FES" => ["Centre Régional de Transfusion Sanguine - fes  ", "Blood Centre Agadir -Lkods fes ", "Center1C"],
+    "SAFI" => ["Centre Régional de Transfusion Sanguine - Safi ", "Blood Centre Agadir -Lkods safi ", "Center1C"],
     
     // Add more cities and centers as needed
 ];

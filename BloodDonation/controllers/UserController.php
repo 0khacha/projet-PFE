@@ -47,7 +47,56 @@ class UserController {
           $_SESSION['redirect_page'] = "bloodRequests.php";
             self::redirectTo("login.php");
         }
+    }public static function getUserData() {
+        if (self::isLoggedIn()) {
+            // Assuming you have a database connection, replace these placeholders with your actual database details
+            include "db_connection.php";
+    
+            // Assuming you have stored the user ID in a session after login
+            $userId = $_SESSION['user_id'];
+    
+            // Replace 'users' with your actual table name
+            $sql = "SELECT * FROM users WHERE id = :userId";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':userId', $userId);
+            $stmt->execute();
+    
+            $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            // Close the database connection
+            $pdo = null;
+    
+            return $userData ? $userData : false;
+        } else {
+            return false; // User not logged in
+        }
     }
+    
+    
+    public static function updateUserData($newUsername, $newEmail) {
+        if (self::isLoggedIn()) {
+            // Assuming you have a database connection, replace these placeholders with your actual database details
+            include "db_connection.php";
+    
+            // Assuming you have stored the user ID in a session after login
+            $userId = $_SESSION['user_id'];
+    
+            // Replace 'users' with your actual table name
+            $sql = "UPDATE users SET username = '$newUsername', email = '$newEmail' WHERE id = '$userId'";
+            
+            if ($pdo->query($sql) === TRUE) {
+                // Update successful
+                return true;
+            } else {
+                // Update failed
+
+                return false;
+            }
+        } else {
+            return false; // User not logged in
+        }
+    }
+    
 }
 
 ?>

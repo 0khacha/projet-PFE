@@ -46,9 +46,6 @@
           </button>
         </div>
       </div>
-      <div class="image-wrapper">
-        <img class="donation-image" src="image/pexels-karolina-grabowska-6629401.jpg" alt="Blood Donation Campaign">
-      </div>
     </div>
   </div>
 
