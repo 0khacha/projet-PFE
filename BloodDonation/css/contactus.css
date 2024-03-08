@@ -1,48 +1,101 @@
-/* Styles for the comment form */
-
-.comment-form {
-  max-width: 600px;
+@import "style.css";
+.blood-donation-section {
+  padding: 0;
+  background: none;
+  background-size: cover;
+  margin-bottom: 10px;
+}
+.blood-donation-section .content-container{
+  opacity: 1; /* Set initial opacity to 0 */
+  transform: translateX(-60%);
+  transition: opacity 0.8s, transform 2s; /* Add transitions for smooth animation */
+  }
+  
+/* Container styling */
+.container-wrapper {
+  max-width: 800px;
   margin: 0 auto;
+}
+
+/* Section styling */
+.donation-conditions-section {
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section header styling */
+.section-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 ,.dark-mode .section-header h2{
+  color: #333;
+}
+
+.section-header p {
+  color: #777;
+
+}
+.dark-mode  p {
+  color: #777;
+
+}
+
+/* Form styling */
+.comment-form {
+  display: grid;
+  grid-gap: 10px;
+  padding: 40px;
 }
 
 .comment-form label {
-  display: block;
-  margin-bottom: 8px;
   font-weight: bold;
-  color: #555;
+  color: #333;
 }
 
 .comment-form input,
 .comment-form textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
-.comment-form textarea {
-  resize: vertical;
-}
 
-.comment-form button {
-  background-color: #d1b5b5;
-  color: #080808;
-  border: none;
-  padding: 10px 20px;
+
+
+
+.comment-form button ,.cta-comment{
+  width: 100%;
+  padding: 10px;
+  background-color: #ED4557;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s, filter 0.3s;
+  border: 1px solid transparent;
+  color: white;
   border-radius: 5px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-bottom: 40px;
+}
+.leave-comment
+{
+  text-decoration: none;
+  color: black;
+
+  
 }
 
-.comment-form button:hover {
+.comment-form button:hover,.cta-comment:hover {
   background-color: #f1f1f1;
+  transform: scale(1.04);
   font-style: oblique;
+  color: black;
 }
-/* Stay in Touch Section */
+
+
+
+

@@ -3,7 +3,6 @@
 @import "dark-mode.css";
 @import "howtohelp.css";
 @import "howtodonate.css";
-@import "contactus.css";
 @import "newsandevent.css";
 @import "find_blood.css";
 @import "header-style.css";
@@ -274,4 +273,15 @@ transform: translateX(0%); /* Move the box to its original position */
   color: var(--body-background-color);
 }
 
-/* New styles for tooltip */
+/* Success and error message styling */
+.success-message,
+.error-message {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.success-message {
+  color: green;
+}
+.error-message {
+  color: red;
+}

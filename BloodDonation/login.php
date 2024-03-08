@@ -37,13 +37,6 @@
                             <label for="password" class="form__label"><i class="fas fa-lock"></i> Password:</label>
                     </div>
 
-                    <div class="form__group">
-                <input type="checkbox" id="rememberMe" name="rememberMe" class="form__checkbox">
-                <label for="rememberMe" class="form__label-checkbox">
-                    <i class="fas fa-check"></i> Remember Me
-                </label>
-            </div>
-
 
                     <button type="submit" name="loginForm">Log in</button>
                 </form>

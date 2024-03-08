@@ -1,5 +1,4 @@
-/* Reset some default styles */
-@import "admin-syle.css";
+
 /* Content Styles */
 .content {
     margin-left: 250px;
@@ -10,9 +9,9 @@
 h2 {
     color: red;
 }
-.table-section
+.table-section 
 {
-  overflow-y: auto; /* Enable vertical scrolling */
+   overflow-y: auto; /* Enable vertical scrolling */
     height: 600px;
     display: flex;
     justify-content: center;
@@ -31,9 +30,9 @@ th, td {
     text-align: left;
 }
 
-th {
-    background-color: #333;
-    color: #fff;
+th{
+    background-color: #f3f0f0;
+    color: #333;
     position: sticky;
     top: 0;
     z-index: 1; /* To ensure the header is above the content */
@@ -43,7 +42,12 @@ th {
 #userTable tbody tr:hover {
   background-color: #ddd;
 }
-
+.dark-mode tr  {
+    background-color: #f3f0f0;
+  }
+#commentsTable tbody tr:hover {
+    background-color: #ddd;
+  }
 /* Modal Styles */
 #editUserTypeModal, #confirmationModal {
     display: none;
@@ -69,7 +73,7 @@ select, button {
 
 button {
 
-  background-color: #ED4557;
+  background-color: #cf8b91;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
   transition-property: background-color,border-color,color,box-shadow,filter;
   transition-duration: .3s;

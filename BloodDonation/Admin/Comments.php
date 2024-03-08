@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <?php include '../controllers/AdminController.php'; ?>
+    <?php AdminController::checkAdminRole();
+?>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin-style.css">
-    <script src="Users.js"></script>
+    <link rel="stylesheet" href="Admin-style.css" type="text/css">
     <link rel="icon" href="../image/logo.svg">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <title>User Management</title>
+    <title>Admin Dashboard - Blood Donation</title>
 </head>
+
 <body>
+    <!-- Sidebar -->
+    
 <nav class="barre-latérale fermer">
     <header>
       <div class="image-texte">
@@ -101,42 +107,31 @@
     </div>
 
   </nav>
-    <div class="content">
-        <h2>User Management</h2>
-        <div class="table-section">
-        <table id="userTable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Usertype</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- User data will be populated here dynamically using JavaScript -->
-            </tbody>
-        </table>
-        <div id="editUserTypeModal" style="display: none;">
-            <form>
-                <label for="newUserType">New User Type:</label>
-                <select id="newUserType">
-                    <option value="user">User</option>
-                    <option value="admin">Admin</option>
-                </select>
-                <button type="button" onclick="updateUserType()">Update</button>
-                <button type="button" onclick="closeEditUserTypeModal()">Cancel</button>
-            </form>
-        </div>
 
-        <div id="confirmationModal" style="display: none;">
-            <p>Are you sure you want to delete this user?</p>
-            <button onclick="deleteUser()">Yes</button>
-            <button onclick="cancelDelete()">No</button>
-        </div>
-        </div>
+    <!-- Main Content -->
+    <div class="content">
+
+
+        <!-- Comments Section -->
+    <div class="comments-section">
+    <h2>Comments from Users</h2>
+    <div class="table-section" style=overflow-y: auto;>
+    <table id="commentsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody id="comments-table-body"></tbody>
+    </table>
     </div>
+</div>
+    </div>
+    <script src="../js/comments-script.js"></script>
     <script>
    // Your existing sidebar toggle and dark mode switch script
     const body = document.querySelector('body'),
@@ -159,4 +154,5 @@
     });
   </script>
 </body>
+
 </html>

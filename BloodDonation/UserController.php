@@ -1,7 +1,13 @@
 <?php
+/*
 session_start();
 class UserController {
     public static function isLoggedIn() {
+        if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'user') {
+            // Redirect or show an error message for non-user roles
+            header("Location: ../login.php");
+            exit();
+        }else
         return isset($_SESSION['user_id']);
     }
 
@@ -47,6 +53,13 @@ class UserController {
           $_SESSION['redirect_page'] = "bloodRequests.php";
             self::redirectTo("login.php");
         }
+    }
+    
+    public static function getComments() {
+        include 'db_connection.php';
+        
+        $stmt = $pdo->query("SELECT * FROM comments");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

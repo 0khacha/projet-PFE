@@ -47,17 +47,17 @@ fetch('DataPerDay.php?dataType=appointments')
     })
     .then(data => {
         // Update the content of the HTML element with the fetched data
-        document.getElementById('appointmentsBox').querySelector('.statistic-number').textContent = data[0].appointmentCount;
+        document.getElementById('appointmentsBox').querySelector('.statistic-number').textContent = data[0].appoinmentCount;
 
         // Create a bar chart using Chart.js
         const ctx = document.getElementById('appointmentsChart').getContext('2d');
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: data.map(entry => entry.appointment_day),
+                labels: data.map(entry => entry.submit_day),
                 datasets: [{
                     label: 'Number of Appointments',
-                    data: data.map(entry => entry.appointmentCount),
+                    data: data.map(entry => entry.appoinmentCount),
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
@@ -86,17 +86,17 @@ fetch('DataPerDay.php?dataType=requests')
     })
     .then(data => {
         // Update the content of the HTML element with the fetched data
-        document.getElementById('requestsBox').querySelector('.statistic-number').textContent = data[0].requestCount;
+        document.getElementById('requestsBox').querySelector('.statistic-number').textContent = data[0].requestsCount;
 
         // Create a bar chart using Chart.js
         const ctx = document.getElementById('requestsChart').getContext('2d');
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: data.map(entry => entry.request_day),
+                labels: data.map(entry => entry.requests_day),
                 datasets: [{
                     label: 'Number of Requests',
-                    data: data.map(entry => entry.requestCount),
+                    data: data.map(entry => entry.requestsCount),
                     backgroundColor: 'rgba(255, 205, 86, 0.2)',
                     borderColor: 'rgba(255, 205, 86, 1)',
                     borderWidth: 1

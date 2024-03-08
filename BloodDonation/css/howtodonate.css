@@ -1,6 +1,7 @@
+
 @import "style.css";
 
-/* Image wrapper styles */
+/* Image wrapper styles 
 .image-wrapper {
   width: 45%;
   overflow: hidden;
@@ -37,7 +38,7 @@ ol li::before {
   top: 0;
   font-size: 18px;
   font-weight: bold;
-  color: black; /* Custom color for the counter */
+  color: black; 
   margin-right: 10px;
 }
 .dark-mode ol li::before{
@@ -47,12 +48,12 @@ ol li::before {
   color: #f8f8f8;
 }
 
-/* Donation conditions section styles */
+/* Donation conditions section styles 
 .donation-conditions-section {
   margin-top: 20px;
 }
 
-/* Section header styles */
+/* Section header styles 
 .section-header {
   text-align: center;
 }
@@ -75,7 +76,7 @@ ol li::before {
   color: #555;
 }
 
-/* Condition list styles */
+/* Condition list styles 
 .condition-list {
   display: flex;
   flex-wrap: wrap;
@@ -84,7 +85,7 @@ ol li::before {
   margin-bottom: 10px;
 }
 
-/* Condition box styles */
+/* Condition box styles 
 .condition-box {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
@@ -104,7 +105,7 @@ ol li::before {
   transition: background-color 0.3s ease;
 }
 
-/* Icon box styles */
+/* Icon box styles 
 .icon-box {
   border-radius: 50%;
   padding: 15px;
@@ -118,7 +119,7 @@ ol li::before {
   height: 35px;
 }
 
-/* Condition info styles */
+/* Condition info styles 
 .condition-info {
   text-align: center;
 }
@@ -132,14 +133,14 @@ ol li::before {
   margin: 0;
 }
 
-/* Paragraph styles */
+/* Paragraph styles 
 .donation-conditions-section p {
   font-size: 16px;
   color: #555555;
   text-align: center;
 }
 
-/* Leave a Comment link styles */
+/* Leave a Comment link styles 
 .donation-conditions-section p a {
   color: rgb(158, 68, 68);
   text-decoration: none;
@@ -152,7 +153,7 @@ ol li::before {
   text-decoration: underline;
 }
 
-/* Container navigation styles */
+/* Container navigation styles 
 .condition-navigation {
   display: flex;
   justify-content: space-between;
@@ -160,7 +161,7 @@ ol li::before {
   padding: 20px;
 }
 
-/* Handle styles */
+/* Handle styles 
 .handle {
   cursor: pointer;
   outline: none;
@@ -168,7 +169,7 @@ ol li::before {
   top: -150px;
 }
 
-/* Indicator icon styles */
+/* Indicator icon styles 
 .indicator-icon {
   width: 20px;
   height: 20px;
@@ -176,19 +177,19 @@ ol li::before {
  
 }
 
-/* Previous button styles */
+/* Previous button styles 
 .handlePrevious {
   margin-right: 10px;
 }
 
-/* Next button styles */
+/* Next button styles 
 .handleNext {
   margin-left: 10px;
 }
 
-/* Change color and move on hover */
+/* Change color and move on hover 
 .handle:hover .indicator-icon {
   transform: translateX(5px);
 }
 
-/* Add more styles as needed */
+/* Add more styles as needed 

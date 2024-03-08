@@ -85,7 +85,7 @@
       <div class="header-dropdown" >
        <button type="submit" name="headerBtn" value="donateBlood" class="header-btn">Donate Blood</button>
         <div class="dropdown-content">
-          <a href="howtodonate.php">How to donate </a>
+          <a href="learn.php#how-to-donate">How to donate </a>
           <a href="donate.php?action=donate" name="headerBtn" value="donateBlood">Donate</a>
         </div>
       </div>
@@ -103,8 +103,8 @@
         <button class="header-btn"> Donation Center</button>
         <div class="dropdown-content">
           <a href="findbloodcentre.php">Find a Blood Center</a>
-          <a href="findablooddrive.html">Find a Blood Drive</a>
-          <a href="contactus.html">Our Center</a>
+          <a href="findablooddrive.php">Find a Blood Drive</a>
+          <a href="contactus.php">Our Center</a>
         </div>
       </div>
       <div class="header-dropdown">

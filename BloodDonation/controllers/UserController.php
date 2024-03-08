@@ -3,6 +3,7 @@ session_start();
 class UserController {
     public static function isLoggedIn() {
         return isset($_SESSION['user_id']);
+        
     }
 
     public static function redirectTo($page) {

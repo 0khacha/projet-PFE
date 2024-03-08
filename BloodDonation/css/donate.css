@@ -7,6 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    height: 100vh; /* Set a specific height for the appointments box */
 
 }
 h2{
@@ -23,14 +24,23 @@ p
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto; /* Enable vertical scrolling */
-    width: 100vh;
-    height: 600px;
+    width: 80vh;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-right: 20px;
     height: 100vh; /* Set a specific height for the appointments box */
 }
-
+.map {
+  flex: 1;
+  height: 100vh; /* Set a specific height for the appointments box */
+  border: 1px solid #ddd; /* Optional border for map */
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Enable vertical scrolling */
+  width: 80vh;
+  height: 100vh; /* Set a specific height for the appointments box */
+}
 .donate-form {
     max-width: 600px;
     margin: 0 auto;
@@ -52,22 +62,111 @@ textarea {
     border-radius: 5px;
 }
 
-/* Add this style to your find_blood.css file or your existing CSS file */
 
-/* Styles for the radio button group in one line */
-/* Map Styles */
-#map {
-    flex: 1;
-    height: 100vh; /* Set a specific height for the appointments box */
-    border: 1px solid #ddd; /* Optional border for map */
-    border-radius: 5px;
-    padding: 5px;
-}
 
-/* Footer Styles */
-/* (Assuming you have a footer section) */
+/* Condition list styles */
+.condition-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-items: center;
+   margin-left: 25px;
 
-/* Dark Mode Styles */
-/* (Assuming you have a dark mode functionality) */
+  }
+  
+  /* Condition info styles */
+  .condition-info {
+    text-align: center;
+  }
+  
+  .condition-info h3 {
+
+    color: white;
+    margin-top: 5px;
+    font-size: 1em;
+  }
+  .reason-box
+  {
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .condition-info p {
+    margin: 0;
+    text-align: justify;
+    color: #f8f8f8;
+    padding: 10px;
+    font-size: 1em;
+    line-height: 1.4;
+    
+    
+  }
+  
+  /* Paragraph styles */
+  .donation-conditions-section p {
+    font-size: 16px;
+
+    text-align: center;
+  }
+  
+  /* Leave a Comment link styles */
+  .donation-conditions-section p a {
+    color: rgb(158, 68, 68);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .donation-conditions-section p a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Container navigation styles */
+  .condition-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Handle styles */
+  .handle {
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    top: -285px;
+    margin: -20px;
+  }
+  
+  /* Indicator icon styles */
+  .indicator-icon {
+    width: 20px;
+    height: 20px;
+    transition: color 0.3s, transform 0.3s;
+   
+  }
+  
+  /* Previous button styles */
+  .handlePrevious {
+    margin-right: 10px;
+  }
+  
+  /* Next button styles */
+  .handleNext {
+    margin-left: 10px;
+  }
+  
+  /* Change color and move on hover */
+  .handle:hover .indicator-icon {
+    transform: translateX(5px);
+  }
+  
+  /* Add more styles as needed */
+  
 
 /* Add any other styles as needed */
+

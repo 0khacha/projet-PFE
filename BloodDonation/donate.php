@@ -24,20 +24,20 @@
     <script src="js/header.js"></script>
 
     <div class="map-section">
-    <div id="map">
+    <div class="map">
     <div class="container-wrapper">
       <div class="donation-conditions-section">
           <!-- Section header -->
           <div class="section-header">
               <h2>Blood Donation Conditions</h2>
-              <p>Before you donate, please ensure you meet the following conditions:</p>
+              <p> please ensure you meet the following conditions:</p>
           </div>
 
           <!-- Condition sets -->
           <!-- Condition Set 1 -->
           <div class="condition-list" id="conditionSet1">
-            <div class="condition-box">
-              <div class="icon-box">
+            <div class="reason-box">
+              <div class="icon-box2">
                 <img src="icons/lose-weight.png" alt="Weight Icon">
               </div>
               <div class="condition-info">
@@ -45,8 +45,8 @@
                 <p>The donor must weigh at least 50 kilograms.</p>
               </div>
             </div>
-            <div class="condition-box">
-              <div class="icon-box">
+            <div class="reason-box">
+              <div class="icon-box2">
                 <img src="icons/age.png" alt="Age Icon">
               </div>
               <div class="condition-info">
@@ -54,8 +54,8 @@
                 <p>The donor's age should be between 18 and 65 years.</p>
               </div>
             </div>
-            <div class="condition-box">
-              <div class="icon-box">
+            <div class="reason-box">
+              <div class="icon-box2">
                 <img src="icons/healthcare.png" alt="Health Icon">
               </div>
               <div class="condition-info">
@@ -63,23 +63,13 @@
                 <p>The donor must be in good health at the time of blood donation.</p>
               </div>
             </div>
-          
-            <div class="condition-box">
-              <div class="icon-box">
-                <img src="icons/blood-cells.png" alt="Hemoglobin Icon">
-              </div>
-              <div class="condition-info">
-                <h3>Hemoglobin Levels</h3>
-                <p>Hemoglobin levels for men should be between 14-17 grams.</p>
-              </div>
-            </div>
           </div>
 
           <!-- Additional condition sets -->
           <!-- Condition Set 2 -->
           <div class="condition-list" id="conditionSet2" style="display: none;">
-            <div class="condition-box">
-              <div class="icon-box">
+            <div class="reason-box">
+              <div class="icon-box2">
                 <img src="icons/centigrade.png" alt="Temperature Icon">
               </div>
               <div class="condition-info">
@@ -87,8 +77,8 @@
                 <p>The body temperature should not exceed 37 degrees Celsius.</p>
               </div>
             </div>
-            <div class="condition-box">
-              <div class="icon-box">
+            <div class="reason-box">
+              <div class="icon-box2">
                 <img src="icons/pulse.png" alt="Pulse Icon">
               </div>
               <div class="condition-info">
@@ -96,22 +86,13 @@
                 <p>The pulse rate should be between 50-100 beats per minute.</p>
               </div>
             </div>
-            <div class="condition-box">
-              <div class="icon-box">
+            <div class="reason-box">
+              <div class="icon-box2">
                 <img src="icons/blood-pressure.png" alt="Blood Pressure Icon">
               </div>
               <div class="condition-info">
                 <h3>Blood Pressure</h3>
                 <p>Blood pressure should be less than 120/80 mmHg.</p>
-              </div>
-            </div>
-            <div class="condition-box">
-              <div class="icon-box">
-                <img src="icons/syringe.png" alt="Medication Icon">
-              </div>
-              <div class="condition-info">
-                <h3>No Recent Medication</h3>
-                <p>Avoid recent medication usage; please consult if unsure.</p>
               </div>
             </div>
             <!-- Add more conditions for Set 2 as needed -->
@@ -125,6 +106,7 @@
               <a href="contactus.php">leave a comment</a> or consult with a medical professional.
           </p>
       </div>
+      
 
       <!-- Condition navigation -->
       <div class="condition-navigation">
@@ -144,7 +126,7 @@
 
         <div class="Appoinments-section">
             <h2>Schedule Your Blood Donation Appointment</h2>
-            <p style="font: italic;">Complete the form to arrange your blood donation appointment. After submission, you will secure an appointment at the selected blood center.</p>
+            <p style="font: italic;">Before scheduling an appointment, make sure you meet the specified conditions aside then complete the form to arrange your blood donation appointment. After submission, you will secure an appointment at the selected blood center.</p>
               <?php
                 // Check if there are any blood donation form errors in the session
                 if (isset($_SESSION['error_message'])) {

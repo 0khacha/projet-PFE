@@ -4,6 +4,7 @@
 <head>
 <?php
     include 'controllers/UserController.php';
+
     UserController::checkLoggedIn();
      // Check if the user is logged in
     UserController::handleButtonClick();  // Handle user button click actions
@@ -11,8 +12,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="image/logo2.png">
+  <link rel="stylesheet" href="css/contactus.css">
+  <link rel="icon" href="image/logo.svg">
   <title>Contact Us - Donate. Just Do It MA</title>
 </head>
 
@@ -35,8 +36,8 @@
           <p>Address: 123 Donation Street, Cityville, Country</p>
         </div>
         
-        <div class="cta-container">
-          <a href="#comment-section" class="donate-link">
+        <div class="cta-comment">
+          <a href="#comment-section" class="leave-comment">
             Leave a Comment
           </a>
         </div>
@@ -55,22 +56,33 @@
               <h2>Leave a Comment</h2>
               <p>Share your thoughts with us!</p>
           </div>
+<!-- Display success message -->
+          <?php if (isset($_SESSION['success_message'])): ?>
+                  <div style="color: green;"><?php echo $_SESSION['success_message']; ?></div>
+                  <?php unset($_SESSION['success_message']); // Clear the session variable ?>
+          <?php endif; ?>
+
+              <!-- Display error message -->
+          <?php if (isset($_SESSION['error_message'])): ?>
+                  <div style="color: red;"><?php echo $_SESSION['error_message']; ?></div>
+                  <?php unset($_SESSION['error_message']); // Clear the session variable ?>
+          <?php endif; ?>
 
           <!-- Comment form -->
-          <form action="#" method="post" class="comment-form">
+          <form action="controllers/conatactController.php" method="post" class="comment-form">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" >
 
             <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone" >
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" >
 
             <label for="comment">Comment:</label>
-            <textarea id="comment" name="comment" required></textarea>
+            <textarea id="comment" name="comment" ></textarea>
 
-            <button type="submit">Submit Comment</button>
+            <button type="submit" >Submit Comment</button>
           </form>
           
       </div>
@@ -80,7 +92,7 @@
     <div id="footer-placeholder"></div>
     <script src="js/footer.js"></script>
     <script src="js/dark-mode.js"></script>
-    <script src="js/condition-dispaly.js"></script>
+    <script src="js/request-text-content.js"></script>
 </body>
 
 </html>

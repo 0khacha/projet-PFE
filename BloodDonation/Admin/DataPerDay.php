@@ -15,26 +15,26 @@ if ($_GET['dataType'] === 'users') {
     // Similar logic for appointments
     // ...
     $queryUsersPerDay = "
-    SELECT DATE(registration_date) AS registration_day, COUNT(*) AS userCount
-    FROM users
-    GROUP BY registration_day
+SELECT DATE(submissionDate) AS submit_day, COUNT(*) AS appoinmentCount
+    FROM blooddonationappointment
+    GROUP BY submit_day
 ";
 
 $resultUsers = $pdo->query($queryUsersPerDay);
-$data['users'] = $resultUsers->fetchAll(PDO::FETCH_ASSOC);
-echo json_encode($data['users']);
+$data['blooddonationappointment'] = $resultUsers->fetchAll(PDO::FETCH_ASSOC);
+echo json_encode($data['blooddonationappointment']);
 } elseif ($_GET['dataType'] === 'requests') {
     // Similar logic for requests
     // ... 
     $queryUsersPerDay = "
-    SELECT DATE(registration_date) AS registration_day, COUNT(*) AS userCount
-    FROM users
-    GROUP BY registration_day
+    SELECT DATE(submission_time) AS requests_day, COUNT(*) AS requestsCount
+    FROM blood_requests
+    GROUP BY requests_day
 ";
 
 $resultUsers = $pdo->query($queryUsersPerDay);
-$data['users'] = $resultUsers->fetchAll(PDO::FETCH_ASSOC);
-echo json_encode($data['users']);
+$data['blood_requests'] = $resultUsers->fetchAll(PDO::FETCH_ASSOC);
+echo json_encode($data['blood_requests']);
     
 } else {
     // Handle invalid dataType parameter

@@ -1,0 +1,136 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header styles */
+#header-placeholder {
+  height: 60px; /* Adjust the height as needed */
+}
+
+/* Blood donation section */
+.blood-donation-section {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.text-content h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.cta-container {
+  margin-top: 20px;
+}
+
+.donate-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.donate-link:hover {
+  background-color: #c0392b;
+}
+
+/* Image wrapper styles */
+.image-wrapper {
+  flex: 1;
+  margin-left: 40px;
+}
+
+/* Comment Section styles */
+.container-wrapper {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+.donation-conditions-section {
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+.comment-form {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.comment-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.comment-form button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+  background-color: #2980b9;
+}
+
+/* Footer styles */
+#footer-placeholder {
+  height: 100px; /* Adjust the height as needed */
+}

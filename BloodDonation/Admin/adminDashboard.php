@@ -3,9 +3,8 @@
 
 <head>
     <?php
-    include '../controllers/UserController.php';
-    UserController::checkLoggedIn();
-
+    require_once '../controllers/AdminController.php';
+    AdminController::checkAdminRole();
     ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,21 +14,101 @@
     <title>Admin Dashboard - Blood Donation</title>
 </head>
 
-<body id="admin-body">
+<body>
     <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="admin-logo-container">
-            <img src="../image/logo.png" alt="Admin Logo">
-            <h2>Admin Panel</h2>
+    <nav class="barre-latérale fermer">
+    <header>
+      <div class="image-texte">
+        <span class="image">
+          <img src="../image/logo.svg" alt="">
+        </span>
+
+        <div class="texte logo-texte">
+          <span class="nom">G-AFUS</span>
+          <span class="lhadaf">Donnez, Sauvez</span>
         </div>
-        <ul>
-            <li class="active"><a href="#">Dashboard</a></li>
-            <li><a href="Users.php">Users</a></li>
-            <li><a href="#">Donations</a></li>
-            <li><a href="#">Centres</a></li>
-            <li><a href="../logout.php">Logout</a></li>
+      </div>
+
+      <i class='bx bx-menu basculer'></i>
+    </header>
+
+    <div class="menu-barre">
+      <div class="menu">
+
+        <ul class="liens-menu">
+          <li class="lien-nav">
+            <a href="#">
+              <i class='bx bx-home-alt icône'></i>
+              <span class="texte texte-nav">Accueil</span>
+            </a>
+          </li>
+
+          <li class="lien-nav">
+            <a href="./liens/profile.html">
+              <i class='bx bx-user icône'></i>
+              <span class="texte texte-nav">Profile</span>
+            </a>
+          </li>
+
+          <li class="lien-nav">
+            <a href="#">
+              <i class='bx bx-bell icône'></i>
+              <span class="texte texte-nav">Notifications</span>
+            </a>
+          </li>
+
+
+          <li class="lien-nav">
+            <a href="Users.php">
+              <i class='bx bx-donate-blood icône'></i>
+              <span class="texte texte-nav">Users</span>
+              <i class='' ></i>
+            </a>
+          </li>
+
+          
+          <li class="lien-nav">
+            <a href="Comments.php">
+              <i  class='bx bx-list-ul icône'></i>
+              <span class="texte texte-nav">Comments</span>
+            </a>
+          </li>
+
+          <li class="lien-nav">
+            <a href="#">
+              <i class='bx bx-calendar icône'></i>
+              <span class="texte texte-nav">Rendez-vous</span>
+            </a>
+          </li>
         </ul>
+      </div>
+
+      <div class="contenu-inférieur">
+        <li class="">
+          <a href="../logout.php">
+            <i class='bx bx-log-out icône'></i>
+            <span class="texte texte-nav">Déconnexion</span>
+          </a>
+        </li>
+
+        <li class="mode">
+          <div class="soleil-lune">
+            <i class='bx bx-moon icône lune'></i>
+            <i class='bx bx-sun icône soleil'></i>
+          </div>
+          <span class="texte texte-mode">Dark Mode</span>
+
+          <div class="interrupteur-toggle">
+            <span class="interrupteur"></span>
+          </div>
+        </li>
+
+      </div>
     </div>
+
+  </nav>
+
+
 
     <!-- Main Content -->
     <div class="main-content">
@@ -45,17 +124,17 @@
                     <h3>Registered Users</h3>
                     <p class="statistic-number">Loading...</p>
                         <!-- Add a canvas element for the chart -->
-                    <canvas id="usersChart" width="300" height="100"></canvas>
+                    <canvas id="usersChart" width="300" height="200"></canvas>
                 </div>
                 <div class="statistic-box" id="appointmentsBox">
                     <h3>Appointments</h3>
                     <p class="statistic-number">Loading..</p>
-                    <canvas id="appointmentsChart" width="300" height="150"></canvas>
+                    <canvas id="appointmentsChart" width="300" height="200"></canvas>
                 </div>
                 <div class="statistic-box" id="requestsBox">
                     <h3>Requests</h3>
                     <p class="statistic-number">Loading..</p>
-                    <canvas id="requestsChart" width="300" height="150"></canvas>
+                    <canvas id="requestsChart" width="300" height="200"></canvas>
                 </div>
                 <!-- Chart Canvas -->
 
@@ -64,19 +143,31 @@
             <!-- Include the Chart.js library -->
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-            <!-- Include the separate JavaScript file -->
 
-        <!-- Recent Activities Section -->
-        <div class="recent-activities">
-            <h2>Recent Activities</h2>
-            <ul>
-                <li>User John Doe registered.</li>
-                <li>Donation received from Jane Smith.</li>
-                <li>New blood request from Hospital XYZ.</li>
-                <!-- Add more activities as needed -->
-            </ul>
-        </div>
+
+        
     </div>
+    <script>
+    // Your existing sidebar toggle and dark mode switch script
+    const body = document.querySelector('body'),
+      sidebar = body.querySelector('.barre-latérale'),
+      toggle = body.querySelector(".basculer"),
+      modeSwitch = body.querySelector(".interrupteur-toggle"),
+      modeText = body.querySelector(".texte-mode");
+
+    toggle.addEventListener("click", () => {
+      sidebar.classList.toggle("fermer");
+    });
+
+    modeSwitch.addEventListener("click", () => {
+      body.classList.toggle("sombre");
+      if (body.classList.contains("sombre")) {
+        modeText.innerText = "Light Mode";
+      } else {
+        modeText.innerText = "Dark Mode";
+      }
+    });
+  </script>
 
     <script src="chart-script.js"></script>
 </body>

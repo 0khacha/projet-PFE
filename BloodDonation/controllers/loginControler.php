@@ -23,7 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginForm"])) {
         if ($_SESSION['user_role'] === 'admin') {
             header("Location: ../Admin/adminDashboard.php");
             exit();
-        } else {
+        } elseif ($_SESSION["user_role"] === "centre") 
+        {
+            header("Location: ../centre/CentreDashboard.php");
+            exit();
+        }
+        else {
             // Check if a specific page was requested before login
             $redirectPage = isset($_SESSION['redirect_page']) ? $_SESSION['redirect_page'] : 'index.php';
 

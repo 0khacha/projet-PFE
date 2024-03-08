@@ -3,10 +3,12 @@
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: pink;
-  max-height: 100vh;
+  height: 100vh; /* Full viewport height */
   display: flex;
   justify-content: center;
+  align-items: center; /* Center vertically */
 }
+
 .animated-button img
 { 
   width: 50px;
@@ -31,9 +33,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-margin-top: 40px;
-margin-bottom: 40px;
-
+  flex-direction: row-reverse;
+  height: 70%; /* Adjust the height as needed */
+  margin: auto; /* Center vertically */
 }
 
 .login-container {
@@ -44,6 +46,7 @@ margin-bottom: 40px;
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
+
 }
 
 .login-image {
