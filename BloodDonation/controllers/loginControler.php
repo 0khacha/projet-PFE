@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginForm"])) {
         if ($_SESSION['user_role'] === 'admin') {
             header("Location: ../Admin/adminDashboard.php");
             exit();
-        } elseif ($_SESSION["user_role"] === "centre") 
+        } elseif ($_SESSION["user_role"] === "center") 
         {
-            header("Location: ../centre/CentreDashboard.php");
+            header("Location: ../CenterAdmin/profile.php");
             exit();
         }
         else {

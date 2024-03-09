@@ -123,6 +123,7 @@
                 <label for="newUserType">New User Type:</label>
                 <select id="newUserType">
                     <option value="user">User</option>
+                    <option value="center">Center</option>
                     <option value="admin">Admin</option>
                 </select>
                 <button type="button" onclick="updateUserType()">Update</button>

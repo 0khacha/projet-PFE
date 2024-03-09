@@ -22,6 +22,8 @@
     <!-- Header Buttons and Dropdowns -->
     <div id="header-placeholder"></div>
     <script src="js/header.js"></script>
+    
+
 
     <div class="map-section">
     <div class="map">
