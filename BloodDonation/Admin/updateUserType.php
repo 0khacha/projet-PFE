@@ -26,8 +26,8 @@ try {
     // Check if the user type is 'center'
     if ($newUserType === 'center') {
         // Insert default values into the blood_center table
-        $insertSql = "INSERT INTO blood_center (user_id, center_name, address, city, zip_code, phone_number, email, registration_date)
-                      VALUES (?, 'Default Center', 'Default Address', 'Default City', '12345', '123-456-7890', 'default@example.com', CURRENT_TIMESTAMP)";
+        $insertSql = "INSERT INTO blood_center (center_id,user_id,center_name, address, city, zip_code, phone_number, email, registration_date)
+                      VALUES (?,? 'Default Center', 'Default Address', 'Default City', '12345', '123-456-7890', 'default@example.com', CURRENT_TIMESTAMP)";
 
         $insertStmt = $pdo->prepare($insertSql);
         $insertStmt->bindParam(1, $userId, PDO::PARAM_INT);

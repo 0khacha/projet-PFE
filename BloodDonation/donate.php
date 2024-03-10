@@ -200,7 +200,10 @@
                     <option value="email">Email</option>
                     <option value="phone">Phone</option>
                 </select>
-
+                
+                <label for="appointmentDay">Preferred Appointment Day:</label>
+                <input type="date" id="appointmentDay" name="appointmentDay" min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>">
+                
                 <label for="availability">Preferred Donation Time:</label>
                 <input type="text" id="availability" name="availability" placeholder="E.g., Weekends, Evenings">
 
@@ -216,7 +219,9 @@
                 <textarea id="additionalComments" name="additionalComments" placeholder="Enter any additional comments"></textarea>
 
                 <button type="submit" class="donate-link" name="bloodDonationForm">Submit Appointment</button>
+
             </form>
+
         </div>
     </div>
     </div>
@@ -225,6 +230,8 @@
     <script src="js/bloodDonationCenters.js"></script>
     <script src="js/dark-mode.js"></script>
     <script src="js/condition-dispaly.js"></script>
+<!-- Add this to your HTML file -->
+
 
 </body>
 

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your existing head content here -->
+
+    <!-- Include the Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+    <style>
+        /* Add your existing styles here */
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        // Initialize the map
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 0, lng: 0 },
+                zoom: 2
+            });
+
+            // Add a marker function
+            function addMarker(location) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png', // Red icon
+                    animation: google.maps.Animation.DROP
+                });
+            }
+
+            // Add a marker for each blood request
+            <?php
+                // Assuming you have PHP code to retrieve the submitted requests from your database
+                // Replace the following with your actual data retrieval and loop logic
+                $requests = getBloodRequests(); // Replace with your function to get blood requests
+
+                foreach ($requests as $request) {
+                    echo "addMarker({lat: " . $request['latitude'] . ", lng: " . $request['longitude'] . "});";
+                }
+            ?>
+        }
+    </script>
+</head>
+
+<body id="body">
+    <!-- Your existing body content here -->
+
+    <!-- Map container -->
+    <div id="map"></div>
+
+    <!-- Your existing scripts here -->
+</body>
+</html>

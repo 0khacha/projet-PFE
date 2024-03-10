@@ -1,0 +1,116 @@
+@import "style.css";
+@import "footer-style.css";
+@import "header-style.css";
+.map-section{
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 40px; 
+  justify-content: space-between;
+}
+.map-container {
+  text-align: center;
+}
+h2
+{
+  text-align: center;
+  align-items: center;
+}
+#map {
+  width: 100vh;
+  height: 600px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+}
+.search-container
+{
+  width: 100vh;
+  height: 600px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  align-items: center;
+}
+.search-box
+{
+margin: 40px;
+}
+.search-bar input[type=text] {
+  margin-left: 60px;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  float: left;
+  width: 60%;
+  background: #f1f1f1;
+
+}
+
+/* Style the submit button */
+.search-bar button {
+  margin-left: 2px;
+  float: left;
+  width: 10%;
+  border-radius: 20px;
+  padding: 10px;
+  color: red;
+  font-size: 17px;
+  border: 0.5px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  border-color: black;
+  border-width: 1px;
+
+}
+
+/* Clear floats */
+.search-bar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#search-button {
+  background-color: #ED4557;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Centres {
+ 
+  width: 80%;
+  margin: 40px auto;
+  max-height: 400px; /* Set a maximum height for the container */
+  overflow-y: auto; 
+}
+
+#centerList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.centerItem {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+
+
+
+.centerItem:hover {
+  background-color: #ED4557;
+  transition: background-color 0.3s ease-in-out;
+}
+
+

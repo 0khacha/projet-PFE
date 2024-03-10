@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Map Viewer</title>
+    <!-- Include Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+
+<div>
+    <label for="cityInput">Enter City:</label>
+    <input type="text" id="cityInput" />
+    <button onclick="searchCity()">Search</button>
+</div>
+
+<div id="map" style="height: 400px;"></div>
+
+<script>
+    var map;
+    var userMarker;
+
+    // Function to initialize the map
+    function initMap() {
+        const defaultLocation = { lat: 34.0209, lng: -6.8416 };
+        map = L.map('map').setView([defaultLocation.lat, defaultLocation.lng], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    };
+
+                    map.setView(userLocation, 13);
+
+                    userMarker = L.marker(userLocation, {
+                        icon: L.icon({
+                            iconUrl: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                            iconSize: [32, 32],
+                            iconAnchor: [16, 32],
+                            popupAnchor: [0, -32]
+                        })
+                    }).addTo(map);
+
+                    // Fetch and indicate the nearest hospitals
+                    fetchNearestHospitals(userLocation);
+                },
+                (error) => {
+                    console.error('Error getting user location:', error);
+                    handleLocationError(defaultLocation);
+                }
+            );
+        } else {
+            map.setView(defaultLocation, 13);
+            handleLocationError(defaultLocation);
+        }
+    }
+
+    // Function to handle errors during geolocation request
+    function handleLocationError(defaultLocation) {
+        console.error('Geolocation error or denied by the user. Using default location.');
+        fetchNearestHospitals(defaultLocation);
+    }
+
+    // Function to search for a city
+    function searchCity() {
+        var cityInput = document.getElementById('cityInput').value;
+
+        // Use OpenCage Geocoding API to get the coordinates of the city
+        var apiKey = '';
+        var geocodingUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(cityInput)}&key=${apiKey}`;
+
+        fetch(geocodingUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.results && data.results.length > 0) {
+                    var location = data.results[0].geometry;
+
+                    map.setView([location.lat, location.lng], 10);
+
+                    if (userMarker) {
+                        userMarker.setLatLng([location.lat, location.lng]);
+                    }
+
+                    // Add a marker at the city location
+                    L.marker([location.lat, location.lng]).addTo(map)
+                        .bindPopup(`<b>${cityInput}</b>`).openPopup();
+
+                    // Fetch and indicate the nearest hospitals
+                    fetchNearestHospitals({ lat: location.lat, lng: location.lng });
+                } else {
+                    alert('City not found. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                alert('Error fetching data. Please try again.');
+            });
+    }
+
+    // Function to fetch and indicate the nearest hospitals
+    function fetchNearestHospitals(location) {
+        // Replace this array with your own list of hospitals and their coordinates
+        const hospitals = [
+            { name: 'Hospital A', lat: 34.030, lng: -6.840, address: '123 Main St' },
+            { name: 'Hospital B', lat: 34.025, lng: -6.845, address: '456 Oak St' },
+            // Add more hospitals as needed
+        ];
+
+        hospitals.forEach((hospital) => {
+            const hospitalMarker = L.marker([hospital.lat, hospital.lng], {
+                icon: L.icon({
+                    iconUrl: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                    iconSize: [32, 32],
+                    iconAnchor: [16, 32],
+                    popupAnchor: [0, -32]
+                })
+            }).addTo(map);
+
+            hospitalMarker.bindPopup(`<b>${hospital.name}</b><br>Address: ${hospital.address}`).openPopup();
+        });
+    }
+    
+    // Request the user's location when the page loads
+    initMap();
+</script>
+
+</body>
+</html>

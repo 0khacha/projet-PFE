@@ -1,0 +1,194 @@
+@import "style.css";
+
+/* Image wrapper styles */
+.image-wrapper {
+  width: 45%;
+  overflow: hidden;
+  justify-content: flex-end;
+}
+
+.donation-image {
+  width: 100%;
+  height: auto;
+  margin-left: 50px;
+}
+
+ol {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+  text-align: justify;
+}
+
+ol li {
+  counter-increment: custom-counter;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+  
+}
+
+ol li::before {
+  content: counter(custom-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: black; /* Custom color for the counter */
+  margin-right: 10px;
+}
+.dark-mode ol li::before{
+  color: #f8f8f8;
+}
+.dark-mode ol li {
+  color: #f8f8f8;
+}
+
+/* Donation conditions section styles */
+.donation-conditions-section {
+  margin-top: 20px;
+}
+
+/* Section header styles */
+.section-header {
+  text-align: center;
+}
+
+.section-header h2 {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+
+.section-header h2 img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  background-color: #f8f8f8;
+  border-radius: 50%;
+  padding: 5px;
+  color: #555;
+}
+
+/* Condition list styles */
+.condition-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Condition box styles */
+.condition-box {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  transition: opacity 0.3s ease;
+}
+
+.condition-box:hover {
+  opacity: 0.8;
+  background-color: #f3f0f0;
+  transition: background-color 0.3s ease;
+}
+
+/* Icon box styles */
+.icon-box {
+  border-radius: 50%;
+  padding: 15px;
+  margin-bottom: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+.icon-box img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Condition info styles */
+.condition-info {
+  text-align: center;
+}
+
+.condition-info h3 {
+  margin: 0;
+  color: #555;
+}
+
+.condition-info p {
+  margin: 0;
+}
+
+/* Paragraph styles */
+.donation-conditions-section p {
+  font-size: 16px;
+  color: #555555;
+  text-align: center;
+}
+
+/* Leave a Comment link styles */
+.donation-conditions-section p a {
+  color: rgb(158, 68, 68);
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.donation-conditions-section p a:hover {
+  text-decoration: underline;
+}
+
+/* Container navigation styles */
+.condition-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Handle styles */
+.handle {
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  top: -150px;
+}
+
+/* Indicator icon styles */
+.indicator-icon {
+  width: 20px;
+  height: 20px;
+  transition: color 0.3s, transform 0.3s;
+ 
+}
+
+/* Previous button styles */
+.handlePrevious {
+  margin-right: 10px;
+}
+
+/* Next button styles */
+.handleNext {
+  margin-left: 10px;
+}
+
+/* Change color and move on hover */
+.handle:hover .indicator-icon {
+  transform: translateX(5px);
+}
+
+/* Add more styles as needed */

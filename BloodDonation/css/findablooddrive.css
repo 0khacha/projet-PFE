@@ -1,4 +1,5 @@
-/* Styles for the blood drive list section */
+
+@import 'style.css';
 .blood-drive-list {
   display: flex;
   flex-wrap: wrap;
@@ -88,27 +89,4 @@ margin-top: 40px;
   box-sizing: border-box;
 }
 
-/* Button styles */
-button[type="submit"] {
-  background-color: #d1b5b5;
-  color: #080808;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-}
 
-/* Icon styles */
-button[type="submit"]::before {
-
-  font-size: 1.2em;
-  margin-right: 5px;
-}
-
-button[type="submit"]:hover {
-  background-color: #f1f1f1;
-  font-style: oblique;
-}
